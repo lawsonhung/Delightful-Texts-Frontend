@@ -2,6 +2,7 @@ import React from 'react';
 import HomePage from './HomePage';
 import SignUpPage from './SignUpPage';
 import LogInPage from './LogInPage';
+// import RegistrationPage from './RegistrationPage'
 
 import { Switch, Route} from 'react-router-dom'
 
