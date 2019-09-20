@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 
 class LogInPage extends Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
   }
 
   handleUsernameChange = (e) => {
@@ -51,6 +52,9 @@ class LogInPage extends Component {
       console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
+      console.log("What is this after loggin in? ", this);
+      console.log("this.props after loggin in: ", this.props);
+      
       this.props.history.push('/homepage')
     })
 
@@ -70,4 +74,4 @@ class LogInPage extends Component {
   }
 }
 
-export default LogInPage;
+export default withRouter(LogInPage);
