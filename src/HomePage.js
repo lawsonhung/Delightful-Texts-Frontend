@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IceCreamOrderPage } from "/IceCreamOrderPage";
 
 class HomePage extends Component {
   render() {

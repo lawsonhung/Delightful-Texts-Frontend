@@ -51,7 +51,7 @@ class LogInPage extends Component {
       console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
-      this.props.history.push('/iceCreamOrder')
+      this.props.history.push('/homepage')
     })
 
   }
