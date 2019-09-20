@@ -53,8 +53,23 @@ class SignUpPage extends Component {
       <div>
         <h1>Sign up for something sweet!</h1>
         <form onSubmit={this.handleSignUpSubmit}>
-          Username: <input name="username" type="text" placeholder="Create a username" onChange={this.handleUsernameChange}></input>
-          Password: <input name="password" type="text" placeholder="Create a password" onChange={this.handlePasswordChange}></input>
+
+          <label>Username: 
+            <input name="username" 
+              type="text" 
+              placeholder="Create a username" 
+              onChange={this.handleUsernameChange}>
+            </input>
+          </label>
+
+          <label >Password: 
+            <input name="password" 
+              type="text" 
+              placeholder="Create a password" 
+              onChange={this.handlePasswordChange}>
+            </input>
+          </label>
+          
           <input type="submit" value="Lets do something sweet!"></input>
         </form>
       </div>

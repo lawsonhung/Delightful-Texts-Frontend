@@ -65,8 +65,23 @@ class LogInPage extends Component {
       <div>
         <h1>Welcome back! Log in here</h1>
         <form onSubmit={this.handleLogInSubmit}>
-          Username: <input name="username" type="text" placeholder="Enter your username" onChange={this.handleUsernameChange}></input>
-          Password: <input name="password" type="text" placeholder="Enter your password" onChange={this.handlePasswordChange}></input>
+
+          <label>Username: 
+            <input name="username" 
+              type="text" 
+              placeholder="Enter your username" 
+              onChange={this.handleUsernameChange}>
+            </input>
+          </label>
+
+          <label>Password: 
+            <input name="password" 
+              type="text" 
+              placeholder="Enter your password" 
+              onChange={this.handlePasswordChange}>
+            </input>
+          </label>
+          
           <input type="submit" value="Sign back in!"></input>
         </form>
       </div>
