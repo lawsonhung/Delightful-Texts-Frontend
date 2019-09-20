@@ -12,6 +12,7 @@ render(){
       <Switch>
         <Route path={'/signup'} component={SignUpPage} />
         <Route path={'/login'} component={LogInPage} />
+        <Route path={'/homepage'} component={HomePage} />
         <Route path={'/'} component={HomePage} />
       </Switch>
     )

@@ -42,7 +42,7 @@ class SignUpPage extends Component {
       console.log("Created user: ", userLogInData)
       console.log("Hide this password though! ", this.state.password);
       localStorage.setItem('jwt', userLogInData.jwt)
-      this.props.history.push('/iceCreamOrder')
+      this.props.history.push('/homepage')
     })
 
   }
