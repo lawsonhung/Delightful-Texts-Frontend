@@ -1,0 +1,19 @@
+/************ Registration Page ************/
+
+.registration {
+  text-align: center;
+}
+
+input:hover, button {
+  cursor: pointer;
+}
+
+/************ Registration Page End************/
+
+/************** Homepage *******************/
+
+.homepage {
+  text-align: center;
+}
+
+/************** Homepage End *******************/

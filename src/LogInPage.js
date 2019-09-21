@@ -52,6 +52,7 @@ class LogInPage extends Component {
       console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
+      localStorage.setItem('userID', userLogInData.user.id)
       console.log("What is this after loggin in? ", this);
       console.log("this.props after loggin in: ", this.props);
       
@@ -62,7 +63,7 @@ class LogInPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="registration" >
         <h1>Welcome back! Log in here</h1>
         <form onSubmit={this.handleLogInSubmit}>
 
@@ -74,6 +75,8 @@ class LogInPage extends Component {
             </input>
           </label>
 
+          <br></br>
+
           <label>Password: 
             <input name="password" 
               type="text" 
@@ -81,6 +84,8 @@ class LogInPage extends Component {
               onChange={this.handlePasswordChange}>
             </input>
           </label>
+
+          <br></br>
           
           <input type="submit" value="Sign back in!"></input>
         </form>

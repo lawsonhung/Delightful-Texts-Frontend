@@ -41,8 +41,8 @@ class SignUpPage extends Component {
     .then(r => r.json())
     .then(userLogInData => {
       console.log("Created user: ", userLogInData)
-      console.log("Hide this password though! ", this.state.password);
       localStorage.setItem('jwt', userLogInData.jwt)
+      localStorage.setItem('userID', userLogInData.user.id)
       this.props.history.push('/homepage')
     })
 
@@ -50,7 +50,7 @@ class SignUpPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="registration" >
         <h1>Sign up for something sweet!</h1>
         <form onSubmit={this.handleSignUpSubmit}>
 
@@ -62,6 +62,8 @@ class SignUpPage extends Component {
             </input>
           </label>
 
+          <br></br>
+
           <label >Password: 
             <input name="password" 
               type="text" 
@@ -69,6 +71,8 @@ class SignUpPage extends Component {
               onChange={this.handlePasswordChange}>
             </input>
           </label>
+
+          <br></br>
           
           <input type="submit" value="Lets do something sweet!"></input>
         </form>
