@@ -12,8 +12,8 @@ class IceCreamOrderPage extends Component {
     })
     .then(r => r.json())
     .then(data => {
-      console.log("localStorage.jwt: ", localStorage.jwt);
-      console.log("What is data? ", data)
+      // console.log("localStorage.jwt: ", localStorage.jwt);
+      console.log("user: ", data)
     })
 
     return(

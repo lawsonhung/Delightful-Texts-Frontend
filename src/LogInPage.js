@@ -11,32 +11,19 @@ class LogInPage extends Component {
   handleUsernameChange = (e) => {
     this.setState({[e.target.name]: e.target.value},
       () => {
-        console.log(this.state.username)
+        // console.log(this.state.username)
       })
   }
 
   handlePasswordChange = (e) => {
     this.setState({[e.target.name]: e.target.value},
       () => {
-        console.log(this.state.password)
+        // console.log(this.state.password)
       })
   }
 
   handleLogInSubmit = (e) => {
     e.preventDefault()
-
-    // fetch("http://localhost:3000/api/v1/users", {
-    //   method: "GET",
-    //   headers: {
-    //     // How do I access token? localStorage
-    //     "Authorization": `Bearer ${local}`
-    //   }
-    // })
-    // .then(r => r.json())
-    // .then(data => {
-    //   console.log("Log in form submitted")
-    //   console.log("Log in status: ", data)
-    // })
 
     fetch("http://localhost:3000/api/v1/login", {
       method: "POST",
@@ -48,13 +35,13 @@ class LogInPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("Log in form submitted")
-      console.log("Log in status: ", userLogInData)
+      // console.log("Log in form submitted")
+      // console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
-      console.log("What is this after loggin in? ", this);
-      console.log("this.props after loggin in: ", this.props);
+      // console.log("What is this after loggin in? ", this);
+      // console.log("this.props after loggin in: ", this.props);
       
       this.props.history.push('/homepage')
     })

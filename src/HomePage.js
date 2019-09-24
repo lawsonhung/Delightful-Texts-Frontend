@@ -9,7 +9,7 @@ class HomePage extends Component {
   }
 
   fetchUserData = () => {
-    
+
   }
 
   logOut = () => {
@@ -29,7 +29,7 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log("Homepage this.state.userID: ", this.state.userID);
+    // console.log("Homepage this.state.userID: ", this.state.userID);
     
     return (
       <div className="homepage" >
