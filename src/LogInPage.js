@@ -1,25 +1,66 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+import { createStore } from 'redux'
+
+const initialState = { 
+  username: 'original store username', 
+  password: 'original store password'
+}
+
+const reducer = (prevState=initialState, action) => {
+
+  console.log("reducer prevState: ", prevState);
+  console.log("reducer action: ", action);
+
+  switch (action.type){
+    case "UPDATE_USERNAME":
+      return {
+        username: action.username,
+        password: prevState.password
+      }
+
+    case "UPDATE_PASSWORD":
+      return {
+        username: prevState.username,
+        password: action.password
+      }
+
+    default:
+      return initialState
+  }
+
+}
+
+// console.log(createStore)
+const store = createStore(reducer)
+// debugger
 
 class LogInPage extends Component {
 
-  state = {
-    username: '',
-    password: '',
+  // state = {
+  //   username: '',
+  //   password: '',
+  // }
+
+  componentDidMount() {
+    // !!!!!!!!!!!DON'T USE forceUpdate. Only used for this purpose
+    store.subscribe(() => this.forceUpdate())
   }
 
   handleUsernameChange = (e) => {
-    this.setState({[e.target.name]: e.target.value},
-      () => {
-        // console.log(this.state.username)
-      })
+    store.dispatch({ type: "UPDATE_USERNAME", username: e.target.value })
+    // this.setState({[e.target.name]: e.target.value},
+    //   () => {
+    //     // console.log(this.state.username)
+    //   })
   }
 
   handlePasswordChange = (e) => {
-    this.setState({[e.target.name]: e.target.value},
-      () => {
-        // console.log(this.state.password)
-      })
+    store.dispatch({ type: "UPDATE_PASSWORD", password: e.target.value })
+    // this.setState({[e.target.name]: e.target.value},
+    //   () => {
+    //     // console.log(this.state.password)
+    //   })
   }
 
   handleLogInSubmit = (e) => {
@@ -31,17 +72,20 @@ class LogInPage extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(
+        // this.state
+        store.getState()
+      )
     })
     .then(r => r.json())
     .then(userLogInData => {
-      // console.log("Log in form submitted")
-      // console.log("Log in status: ", userLogInData)
+      console.log("Log in form submitted")
+      console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
-      // console.log("What is this after loggin in? ", this);
-      // console.log("this.props after loggin in: ", this.props);
+      console.log("What is this after loggin in? ", this);
+      console.log("this.props after loggin in: ", this.props);
       
       this.props.history.push('/homepage')
     })
