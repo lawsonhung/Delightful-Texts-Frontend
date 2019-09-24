@@ -1,39 +1,38 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import { createStore } from 'redux'
+import { connect } from 'react-redux'
 
-const initialState = { 
-  username: 'original store username', 
-  password: 'original store password'
-}
+// const initialState = { 
+//   username: 'original store username', 
+//   password: 'original store password'
+// }
 
-const reducer = (prevState=initialState, action) => {
+// const reducer = (prevState=initialState, action) => {
 
-  console.log("reducer prevState: ", prevState);
-  console.log("reducer action: ", action);
+//   console.log("reducer prevState: ", prevState);
+//   console.log("reducer action: ", action);
 
-  switch (action.type){
-    case "UPDATE_USERNAME":
-      return {
-        username: action.username,
-        password: prevState.password
-      }
+//   switch (action.type){
+//     case "UPDATE_USERNAME":
+//       return {
+//         username: action.username,
+//         password: prevState.password
+//       }
 
-    case "UPDATE_PASSWORD":
-      return {
-        username: prevState.username,
-        password: action.password
-      }
+//     case "UPDATE_PASSWORD":
+//       return {
+//         username: prevState.username,
+//         password: action.password
+//       }
 
-    default:
-      return initialState
-  }
+//     default:
+//       return initialState
+//   }
 
-}
+// }
 
 // console.log(createStore)
-const store = createStore(reducer)
-// debugger
+// const store = createStore(reducer)
 
 class LogInPage extends Component {
 
@@ -43,12 +42,17 @@ class LogInPage extends Component {
   // }
 
   componentDidMount() {
-    // !!!!!!!!!!!DON'T USE forceUpdate. Only used for this purpose
-    store.subscribe(() => this.forceUpdate())
+    // !!!DON'T USE forceUpdate. Only used for this purpose
+    // store.subscribe(() => this.forceUpdate())
   }
 
   handleUsernameChange = (e) => {
-    store.dispatch({ type: "UPDATE_USERNAME", username: e.target.value })
+    this.props.updateUsername(e.target.value)
+    console.log(this.props.username)
+    
+
+    // store.dispatch({ type: "UPDATE_USERNAME", username: e.target.value })
+
     // this.setState({[e.target.name]: e.target.value},
     //   () => {
     //     // console.log(this.state.username)
@@ -56,7 +60,12 @@ class LogInPage extends Component {
   }
 
   handlePasswordChange = (e) => {
-    store.dispatch({ type: "UPDATE_PASSWORD", password: e.target.value })
+    this.props.updatePassword(e.target.value)
+    console.log(this.props.password);
+    
+
+    // store.dispatch({ type: "UPDATE_PASSWORD", password: e.target.value })
+
     // this.setState({[e.target.name]: e.target.value},
     //   () => {
     //     // console.log(this.state.password)
@@ -72,10 +81,14 @@ class LogInPage extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(
+      body: JSON.stringify({
+        username: this.props.username,
+        password: this.props.password
+
+        // store.getState()
+
         // this.state
-        store.getState()
-      )
+      })
     })
     .then(r => r.json())
     .then(userLogInData => {
@@ -93,6 +106,13 @@ class LogInPage extends Component {
   }
 
   render() {
+
+    console.log("LogInPage props: ", this.props);
+    // console.log(this.props.username);
+    // console.log(this.props.password);
+    
+    
+
     return (
       <div className="registration" >
         <h1>Welcome back! Log in here</h1>
@@ -125,4 +145,27 @@ class LogInPage extends Component {
   }
 }
 
-export default withRouter(LogInPage);
+
+const mapStateToProps = (store) => {
+  // console.log("redux store: ", store);
+  
+  return {
+    username: store.username,
+    password: store.password
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  // console.log("dispatch: ",dispatch);
+  
+  return {
+    updateUsername: (newUsername) => {
+      dispatch({ type: "UPDATE_USERNAME", username: newUsername })
+    },
+    updatePassword: (newPassword) => {
+      dispatch({ type: "UPDATE_PASSWORD", password: newPassword })
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogInPage))
