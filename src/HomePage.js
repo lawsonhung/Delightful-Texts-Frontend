@@ -8,6 +8,10 @@ class HomePage extends Component {
     userID: localStorage.userID
   }
 
+  fetchUserData = () => {
+    
+  }
+
   logOut = () => {
     fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
       method: 'PATCH',
@@ -29,7 +33,8 @@ class HomePage extends Component {
     
     return (
       <div className="homepage" >
-        <h1>This is the HomePage</h1>
+        <h1 className="header" >This is the HomePage</h1>
+        {this.fetchUserData()}
         <button onClick={this.logOut} >Log out</button>
         <IceCreamOrderPage />
         <ViewIceCreamOrdersPage userID={this.state.userID}/>
