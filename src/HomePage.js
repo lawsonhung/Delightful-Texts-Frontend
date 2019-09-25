@@ -33,8 +33,9 @@ class HomePage extends Component {
     
     return (
       <div className="homepage" >
-        <h1 className="header" >This is the HomePage</h1>
-        <button onClick={this.logOut} >Log out</button>
+        <h1 className="header" >This is the HomePage
+          <button onClick={this.logOut} >Log out</button>
+        </h1>
         <IceCreamOrderPage />
         <ViewIceCreamOrdersPage userID={this.state.userID}/>
       </div>

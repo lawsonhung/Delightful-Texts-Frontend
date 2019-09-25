@@ -1,6 +1,14 @@
+/************* Overriding user agent stylesheets **********/
+
 body {
   margin: 0;
 }
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, p:hover {
+  cursor: default;
+}
+
+/************* Overriding user agent stylesheets end **********/
 
 /************ Registration Page ************/
 
@@ -12,7 +20,7 @@ input {
   margin: 0.5em;
 }
 
-input:hover, label:hover, button {
+input:hover, label:hover, select:hover, option:hover, button {
   cursor: pointer;
 }
 
@@ -22,6 +30,8 @@ input:hover, label:hover, button {
 
 .header {
   /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .homepage {
