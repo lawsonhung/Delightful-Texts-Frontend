@@ -126,7 +126,7 @@ class LogInPage extends Component {
             </input>
           </label>
 
-          <br></br>
+          <br/>
 
           <label>Password: 
             <input name="password" 
@@ -136,7 +136,7 @@ class LogInPage extends Component {
             </input>
           </label>
 
-          <br></br>
+          <br/>
           
           <input type="submit" value="Sign back in!"></input>
         </form>

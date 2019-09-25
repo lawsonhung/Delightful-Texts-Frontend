@@ -6,6 +6,10 @@ class ViewIceCreamOrdersPage extends Component {
     iceCreamOrders: []
   }
 
+  componentDidMount() {
+    this.fetchAllIceCreamOrders()
+  }
+
   fetchAllIceCreamOrders = () => {
     fetch('http://localhost:3000/api/v1/ice_cream_orders', {
       headers: {
@@ -25,22 +29,18 @@ class ViewIceCreamOrdersPage extends Component {
 
   
   render() {
-    console.log("this.props for ViewiceCreamOrdersPage: ", this.props);
-    
-    this.fetchAllIceCreamOrders()
+    // console.log("this.props for ViewiceCreamOrdersPage: ", this.props);
 
     const iceCreamOrders = this.state.iceCreamOrders.map(order => {
-      
-      
       if(order.user_id === parseInt(this.props.userID)){
         console.log("Ice cream order: ", order);
         
         return (
-          <h2>Order number {order.id} for user {this.props.userID} </h2>
+          <h2 key={null}>Order number {order.id} for user {this.props.userID} </h2>
         )
       } else {
         return (
-          <h2>🍦 You didn't order any ice cream yet 🍦</h2>
+          <h2 key={null}><span role="img" aria-label="ice cream">🍦</span> You didn't order any ice cream yet <span role="img" aria-label="ice cream">🍦</span></h2>
         )
       }
     })
