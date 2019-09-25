@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+/************ Registration Page ************/
+
+.registration {
+  text-align: center;
+}
+
+input {
+  margin: 0.5em;
+}
+
+input:hover, label:hover, button {
+  cursor: pointer;
+}
+
+/************ Registration Page End************/
+
+/************** Homepage *******************/
+
+.header {
+  /* position: fixed; */
+}
+
+.homepage {
+  text-align: center;
+}
+
+/************** Homepage End *******************/
