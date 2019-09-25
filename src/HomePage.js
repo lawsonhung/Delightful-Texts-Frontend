@@ -34,7 +34,6 @@ class HomePage extends Component {
     return (
       <div className="homepage" >
         <h1 className="header" >This is the HomePage</h1>
-        {this.fetchUserData()}
         <button onClick={this.logOut} >Log out</button>
         <IceCreamOrderPage />
         <ViewIceCreamOrdersPage userID={this.state.userID}/>
