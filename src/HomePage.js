@@ -26,6 +26,8 @@ class HomePage extends Component {
     })
     localStorage.removeItem('jwt')
     localStorage.removeItem('userID')
+    localStorage.removeItem('username')
+    // localStorage.clear()
     this.props.history.push('/')
   }
 
@@ -39,11 +41,11 @@ class HomePage extends Component {
 
         <div className="headerBar">
           <h1 className="appName">Delightful Texts</h1>
-          <button className="logOutBtn" onClick={this.logOut} >Log Out 😢</button>
+          <button className="logOutBtn" onClick={this.logOut} >Log Out <span role="img" aria-label="sad face">😢</span> Are you sure??? </button>
         </div>
 
-        <div className="homepage" >
-          <h2>Welcome back, {this.props.username}!</h2>
+        <div className="homepage backgroundImg " >
+          <h1 className="welcomeMsg">Welcome back, {localStorage.username}!</h1>
           <IceCreamOrderPage />
           <ViewIceCreamOrdersPage userID={this.state.userID}/>
         </div>
