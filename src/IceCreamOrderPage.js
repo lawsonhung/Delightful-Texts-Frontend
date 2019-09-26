@@ -40,9 +40,24 @@ class IceCreamOrderPage extends Component {
   handleIceCreamOrderSubmit = (e) => {
     e.preventDefault()
 
-    console.log("Ice cream order submitted");
-    console.log(this.state);
-    
+    console.log("State being sent to fetch post create ice cream: ", this.state)
+
+    fetch("http://localhost:3000/api/v1/ice_creams", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        "flavor": this.state.flavor,
+        "m_and_ms": this.state["m&ms"],
+        "peanuts": this.state.peanuts,
+        "size": this.state.size,
+        "sprinkles": this.state.sprinkles,
+        "hot_chocolate_fudge": this.state["hot chocolate fudge"]
+      })
+    })
+    .then(r => console.log(r))
     
   }
 

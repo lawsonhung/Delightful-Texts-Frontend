@@ -2,6 +2,10 @@
 
 body {
   margin: 0;
+  background-image: url("body background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
 }
 
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, p:hover {
@@ -26,16 +30,39 @@ input:hover, label:hover, select:hover, option:hover, button {
 
 /************ Registration Page End************/
 
-/************** Homepage *******************/
+/********** Header Bar ***********/
 
-.header {
-  /* position: fixed; */
+.headerBar {
+  position: fixed;
+  width: 100%;
+  background-image: url("header bar background.jpg");
+  background-position: bottom;
+  opacity: 0.9;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
+
+.appName {
+  width: 100%;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  text-shadow: 2px 2px 5px white;
+}
+
+.logOutBtn {
+  background-color: red;
+  color: white;
+  font-size: 1.1em;
+}
+
+/********** Header Bar End ***********/
+
+/************** Homepage Content *******************/
 
 .homepage {
   text-align: center;
+  padding-top: 13em;
 }
 
-/************** Homepage End *******************/
+/************** Homepage Content End *******************/

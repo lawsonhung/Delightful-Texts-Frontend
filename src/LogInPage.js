@@ -99,6 +99,9 @@ class LogInPage extends Component {
       localStorage.setItem('userID', userLogInData.user.id)
       console.log("What is this after loggin in? ", this);
       console.log("this.props after loggin in: ", this.props);
+      this.props.updateUserData(userLogInData)
+      console.log("this.props after updating user in redux store: ", this.props);
+      
       
       this.props.history.push('/homepage')
     })
@@ -151,7 +154,8 @@ const mapStateToProps = (store) => {
   
   return {
     username: store.username,
-    password: store.password
+    password: store.password,
+    userData: store.userData
   }
 }
 
@@ -164,6 +168,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     updatePassword: (newPassword) => {
       dispatch({ type: "UPDATE_PASSWORD", password: newPassword })
+    },
+    updateUserData: (newUser) => {
+      dispatch({ type: "UPDATE_USERDATA", userData: newUser })
     }
   }
 }
