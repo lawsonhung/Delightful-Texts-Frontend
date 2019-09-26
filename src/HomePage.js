@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceCreamOrderPage from './IceCreamOrderPage';
 import ViewIceCreamOrdersPage from './ViewIceCreamOrdersPage';
+import { connect } from 'react-redux'
 
 class HomePage extends Component {
 
@@ -30,17 +31,36 @@ class HomePage extends Component {
 
   render() {
     // console.log("Homepage this.state.userID: ", this.state.userID);
+    console.log("Homepage this.props after connecting to redux store: ", this.props);
+    
     
     return (
-      <div className="homepage" >
-        <h1 className="header" >This is the HomePage
-          <button onClick={this.logOut} >Log out</button>
-        </h1>
-        <IceCreamOrderPage />
-        <ViewIceCreamOrdersPage userID={this.state.userID}/>
+      <div>
+
+        <div className="headerBar">
+          <h1 className="appName">Delightful Texts</h1>
+          <button className="logOutBtn" onClick={this.logOut} >Log Out 😢</button>
+        </div>
+
+        <div className="homepage" >
+          <h2>Welcome back, {this.props.username}!</h2>
+          <IceCreamOrderPage />
+          <ViewIceCreamOrdersPage userID={this.state.userID}/>
+        </div>
+        
       </div>
-    );
+    )
   }
 }
 
-export default HomePage;
+const mapStateToProps = (store) => {
+  // console.log("redux store: ", store);
+  
+  return {
+    username: store.username,
+    password: store.password,
+    userData: store.userData
+  }
+}
+
+export default connect(mapStateToProps, null)(HomePage);

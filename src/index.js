@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer'
-
+// import { PersistGate } from 'redux-persist/integration/react'
 
 // console.log(createStore)
 const store = createStore(rootReducer)

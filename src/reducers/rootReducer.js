@@ -1,6 +1,7 @@
 const initialState = { 
   username: 'original store username', 
-  password: 'original store password'
+  password: 'original store password',
+  userData: 'original store userData'
 }
 
 export default (prevState=initialState, action) => {
@@ -12,13 +13,22 @@ export default (prevState=initialState, action) => {
     case "UPDATE_USERNAME":
       return {
         username: action.username,
-        password: prevState.password
+        password: prevState.password,
+        userData: prevState.userData
       }
 
     case "UPDATE_PASSWORD":
       return {
         username: prevState.username,
-        password: action.password
+        password: action.password,
+        userData: prevState.userData
+      }
+
+    case "UPDATE_USERDATA":
+      return {
+        username: prevState.username,
+        password: prevState.password,
+        userData: action.userData
       }
 
     default:
