@@ -57,26 +57,28 @@ class IceCreamOrderPage extends Component {
         "hot_chocolate_fudge": this.state["hot chocolate fudge"]
       })
     })
-    .then(r => console.log(r))
+    .then(r => r.json())
+    .then(data => {
+      console.log("What is data after submitting ice cream form?", data)
+    })
     
   }
 
   render() {
     return (
       <div>
-        <h1>Order ice cream page here</h1>
-        {this.renderIceCreamOrders()}
+        <h1 className="iceCreamOrderFormTitle">Ice cream, you scream, we all scream for ice cream!</h1>
+        {/*this.renderIceCreamOrders()*/}
 
-        <form onSubmit={this.handleIceCreamOrderSubmit}>
-          <label><h3>Flavor:</h3> 
-            <select name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
-              <option value="vanilla">Vanilla</option>
-              <option value="chocolate">Chocolate</option>
-            </select>
-          </label>
+        <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
+          <h3 className="formLabel">What do you feel like having today?</h3> 
+          <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+          </select>
 
-          <h3>Toppings:</h3>
-          <label>M&M's:
+          <h3 className="formLabel">Choose your toppings!</h3>
+          <label><span className="iceCreamFormInput">M&M's:</span>
             <input name="m&ms"
               type="checkbox"
               checked={this.state["m&ms"]}
@@ -84,7 +86,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label>Peanuts:
+          <label><span className="iceCreamFormInput">Peanuts:</span>
             <input name="peanuts"
               type="checkbox"
               checked={this.state.peanuts}
@@ -92,7 +94,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label>Sprinkles:
+          <label><span className="iceCreamFormInput">Sprinkles:</span>
             <input name="sprinkles"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -100,8 +102,8 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <h3>Want some hot chocolate fudge with that? <span role="img" aria-label="chocolate bar">🍫</span></h3>
-          <label>Hell yeah I do!
+          <h3 className="formLabel">Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
+          <label><span className="iceCreamFormInput">Hell yeah I do!</span>
             <input name="hot chocolate fudge"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -109,18 +111,17 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <label><h3>Size:</h3>
-            <select name="size" value={this.state.size} onChange={this.handleIceCreamOrderChange}>
-              <option value="cone">Cone</option>
-              <option value="small cup">Small Cup</option>
-              <option value="medium cup">Medium Cup</option>
-              <option value="large cup">Large Cup</option>
-            </select>
-          </label>
+          <h3 className="formLabel">Size:</h3>
+          <select className="iceCreamFormInput" name="size" value={this.state.size} onChange={this.handleIceCreamOrderChange}>
+            <option value="cone">Cone</option>
+            <option value="small cup">Small Cup</option>
+            <option value="medium cup">Medium Cup</option>
+            <option value="large cup">Large Cup</option>
+          </select>
 
           <br/>
 
-          <input type="submit" value="Place your order"></input>
+          <input className="iceCreamOrderFormSubmitBtn" type="submit" value="Place your order"></input>
           
         </form>
       </div>

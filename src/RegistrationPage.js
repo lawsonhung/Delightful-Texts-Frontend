@@ -3,12 +3,20 @@ import LogInPage from './LogInPage';
 import SignUpPage from './SignUpPage';
 
 class RegistrationPage extends Component {
+  
   render() {
     return (
-      <div>
-        <h1 className="registration">Registration Page</h1>
-        <LogInPage />
-        <SignUpPage />
+      <div className="registrationPage">
+
+        <div className="headerBar">
+          <h1 className="appName">Delightful Texts</h1>
+        </div>
+
+        <div className="logInSignUpPages">
+          <LogInPage />
+          <div className="logInSignUpDivider"></div>
+          <SignUpPage />
+        </div>
       </div>
     );
   }

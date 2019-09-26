@@ -1,0 +1,180 @@
+/************* Overriding user agent stylesheets **********/
+
+body {
+  margin: 0;
+}
+
+/************* Overriding user agent stylesheets end **********/
+
+/************ Universal Styling *****************/
+
+h1, h2, h3, h4, h5, p, input, select, option, label, button {
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 2px 2px 5px #3E3E3E;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, p:hover {
+  cursor: default;
+}
+
+input:hover, label:hover, select:hover, option:hover, button {
+  cursor: pointer;
+}
+
+/************ Universal Styling End *****************/
+
+/**************  Background Image **************/
+
+.backgroundImg, .registrationPage {
+  background-image: url("body bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/**************  Background Image End **************/
+
+/************ Registration Page ************/
+
+.registration {
+  text-align: center;
+}
+
+.registrationPage label {
+  font-size: 2em;
+}
+
+.registrationPage input {
+  font-size: 0.75em;
+  border-radius: 15px;
+}
+
+.registrationPage input[type=submit] {
+  font-size: 1em;
+  box-shadow: 2px 2px 5px #3E3E3E;
+}
+
+input {
+  margin: 0.5em;
+  color: #000000;
+  text-shadow: 0px 0px;
+  transition: 0.25s;
+}
+
+input:hover {
+  background-color: #6699FF;
+  transition: 0.25s;
+}
+
+.logInSignUpPages {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40vh 0em 30vh 0em;
+}
+
+.logInSignUpDivider {
+  border: 1px solid #000000;
+  height: 35vh;
+}
+
+/************ Registration Page End************/
+
+/********** Header Bar ***********/
+
+.headerBar {
+  position: fixed;
+  width: 100%;
+  background-image: url("header bar bg.jpg");
+  background-position: bottom;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 8px 6px -5px #000000;
+}
+
+.appName {
+  width: 100%;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  text-shadow: 2px 2px 5px #FFFFFF;
+}
+
+.logOutBtn {
+  background-image: url("logout btn hover.jpg");
+  font-size: 1.1em;
+  border-radius: 25px 0 0 25px;
+  border: 2px solid #CCCCCC;
+  opacity: 0.9;
+  color: #FFFFFF;
+  transition: 0.25s;
+}
+
+.logOutBtn:hover {
+  background-size: cover;
+  text-shadow: 2px 2px 2px #000000;
+  opacity: 0.9;
+  transition: 0.25s;
+}
+
+/********** Header Bar End ***********/
+
+/************** Homepage Content *******************/
+
+.homepage {
+  text-align: center;
+  padding-top: 13em;
+}
+
+.welcomeMsg {
+  font-size: 4em;
+}
+
+/************** Homepage Content End *******************/
+
+/************ iceCreamOrderForm ***********/
+
+.iceCreamOrderForm .formLabel {
+  font-size: 2em;
+}
+
+.iceCreamFormInput {
+  font-size: 2em;
+}
+
+select {
+  transition: 0.25s;
+  box-shadow: 2px 2px 5px #3E3E3E;
+}
+
+select:hover {
+  background-color: #0000FF;
+  color: #FFFFFF;
+  transition: 0.25s;
+}
+
+.hotChocolateFudge {
+  color: #996633;
+  font-size: 1.2em;
+}
+
+.iceCreamOrderFormSubmitBtn {
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 2px 2px 5px #3E3E3E;
+  font-size: 3em;
+  border-radius: 25px;
+  padding: 0.25em;
+  background-image: url("ice cream order submit btn bg.jpeg");
+  opacity: 0.7;
+  transition: 0.25s;
+  color: #FFFFFF;  border: 2px solid #CCCCCC;
+  box-shadow: 2px 2px 5px #3E3E3E;
+}
+
+.iceCreamOrderFormSubmitBtn:hover {
+  opacity: 1;
+  transition: 0.25s;
+}
+
+/************ iceCreamOrderForm End ***********/

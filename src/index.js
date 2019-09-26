@@ -10,6 +10,9 @@ import rootReducer from './reducers/rootReducer'
 // console.log(createStore)
 const store = createStore(rootReducer)
 
+// What is persistor?
+// <PersistGate loading={null} persistor={persistor}></PersistGate>
+
 ReactDOM.render(
   <Provider store={store} >
     <BrowserRouter>

@@ -43,6 +43,7 @@ class SignUpPage extends Component {
       console.log("Created user: ", userLogInData)
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
+      localStorage.setItem('username', userLogInData.user.username)
       this.props.history.push('/homepage')
     })
 
@@ -50,7 +51,7 @@ class SignUpPage extends Component {
 
   render() {
     return (
-      <div className="registration" >
+      <div className="registration signUp" >
         <h1>Sign up for something sweet!</h1>
         <form onSubmit={this.handleSignUpSubmit}>
 

@@ -97,6 +97,7 @@ class LogInPage extends Component {
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
+      localStorage.setItem('username', userLogInData.user.username)
       console.log("What is this after loggin in? ", this);
       console.log("this.props after loggin in: ", this.props);
       this.props.updateUserData(userLogInData)
@@ -117,7 +118,7 @@ class LogInPage extends Component {
     
 
     return (
-      <div className="registration" >
+      <div className="registration logIn" >
         <h1>Welcome back! Log in here</h1>
         <form onSubmit={this.handleLogInSubmit}>
 
