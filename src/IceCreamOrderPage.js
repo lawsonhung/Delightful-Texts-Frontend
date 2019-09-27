@@ -42,6 +42,16 @@ class IceCreamOrderPage extends Component {
 
     console.log("State being sent to fetch post create ice cream: ", this.state)
 
+    // Example body of post request
+    // {
+    //   "flavor": "Vanilla",
+    //   "m_and_ms": false,
+    //   "peanuts": false,
+    //   "size": "cone",
+    //   "sprinkles": false,
+    //   "hot_chocolate_fudge": false
+    // }
+
     fetch("http://localhost:3000/api/v1/ice_creams", {
       method: "POST",
       headers: {
@@ -71,6 +81,9 @@ class IceCreamOrderPage extends Component {
         {/*this.renderIceCreamOrders()*/}
 
         <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
+          
+          <input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>
+          
           <h3 className="formLabel">What do you feel like having today?</h3> 
           <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
             <option value="vanilla">Vanilla</option>
@@ -78,7 +91,7 @@ class IceCreamOrderPage extends Component {
           </select>
 
           <h3 className="formLabel">Choose your toppings!</h3>
-          <label><span className="iceCreamFormInput">M&M's:</span>
+          <label><span className="iceCreamFormInput">M&M's?</span>
             <input name="m&ms"
               type="checkbox"
               checked={this.state["m&ms"]}
@@ -86,7 +99,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Peanuts:</span>
+          <label><span className="iceCreamFormInput">Peanuts?</span>
             <input name="peanuts"
               type="checkbox"
               checked={this.state.peanuts}
@@ -94,7 +107,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Sprinkles:</span>
+          <label><span className="iceCreamFormInput">Sprinkles?</span>
             <input name="sprinkles"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -111,7 +124,7 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <h3 className="formLabel">Size:</h3>
+          <h3 className="formLabel">How much ice cream do you want?</h3>
           <select className="iceCreamFormInput" name="size" value={this.state.size} onChange={this.handleIceCreamOrderChange}>
             <option value="cone">Cone</option>
             <option value="small cup">Small Cup</option>

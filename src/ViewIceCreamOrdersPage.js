@@ -11,16 +11,17 @@ class ViewIceCreamOrdersPage extends Component {
   }
 
   fetchAllIceCreamOrders = () => {
-    fetch('http://localhost:3000/api/v1/ice_cream_orders', {
+    fetch('http://localhost:3000/api/v1/ice_creams', {
       headers: {
         Authorization: `Bearer ${localStorage.jwt}`
       }
     })
     .then(r => r.json())
     .then(data => {
+      console.log("What is data?", data)
       // console.log("All ice cream orders should show here: ", data.ice_cream_orders)
       if (this.state.iceCreamOrders.length === 0){
-        this.setState({iceCreamOrders: data.ice_cream_orders}, 
+        this.setState({iceCreamOrders: data.ice_creams}, 
           // () => this.renderIceCreamOrders()
         )
       }

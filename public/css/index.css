@@ -50,7 +50,7 @@ input:hover, label:hover, select:hover, option:hover, button {
   border-radius: 15px;
 }
 
-.registrationPage input[type=submit] {
+.registrationPage input {
   font-size: 1em;
   box-shadow: 2px 2px 5px #3E3E3E;
 }
@@ -70,11 +70,11 @@ input:hover {
 .logInSignUpPages {
   display: flex;
   justify-content: space-evenly;
-  padding: 40vh 0em 30vh 0em;
+  padding: 40vh 0em 20vh 0em;
 }
 
 .logInSignUpDivider {
-  border: 1px solid #000000;
+  border: 1px solid #3E3E3E;
   height: 35vh;
 }
 
@@ -135,6 +135,10 @@ input:hover {
 
 /************ iceCreamOrderForm ***********/
 
+.iceCreamOrderFormTitle {
+  color: #ffff80;
+}
+
 .iceCreamOrderForm .formLabel {
   font-size: 2em;
 }
@@ -149,7 +153,7 @@ select {
 }
 
 select:hover {
-  background-color: #0000FF;
+  background-color: #6699FF;
   color: #FFFFFF;
   transition: 0.25s;
 }

@@ -48,7 +48,7 @@ class LogInPage extends Component {
 
   handleUsernameChange = (e) => {
     this.props.updateUsername(e.target.value)
-    console.log(this.props.username)
+    // console.log(this.props.username)
     
 
     // store.dispatch({ type: "UPDATE_USERNAME", username: e.target.value })
@@ -61,7 +61,7 @@ class LogInPage extends Component {
 
   handlePasswordChange = (e) => {
     this.props.updatePassword(e.target.value)
-    console.log(this.props.password);
+    // console.log(this.props.password);
     
 
     // store.dispatch({ type: "UPDATE_PASSWORD", password: e.target.value })
@@ -92,16 +92,14 @@ class LogInPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("Log in form submitted")
       console.log("Log in status: ", userLogInData)
       // put token in local storage to access profile above when authorizing
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
       localStorage.setItem('username', userLogInData.user.username)
-      console.log("What is this after loggin in? ", this);
-      console.log("this.props after loggin in: ", this.props);
+      // console.log("this.props after loggin in: ", this.props);
       this.props.updateUserData(userLogInData)
-      console.log("this.props after updating user in redux store: ", this.props);
+      // console.log("this.props after updating user in redux store: ", this.props);
       
       
       this.props.history.push('/homepage')
@@ -111,7 +109,7 @@ class LogInPage extends Component {
 
   render() {
 
-    console.log("LogInPage props: ", this.props);
+    // console.log("LogInPage props from redux store: ", this.props);
     // console.log(this.props.username);
     // console.log(this.props.password);
     
@@ -161,7 +159,6 @@ const mapStateToProps = (store) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  // console.log("dispatch: ",dispatch);
   
   return {
     updateUsername: (newUsername) => {

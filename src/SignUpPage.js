@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class SignUpPage extends Component {
 
-  state = {
-    username: '',
-    password: ''
-  }
-
   handleUsernameChange = (e) => {
-    this.setState({[e.target.name]: e.target.value},
-      () => {
-        // console.log(this.state.username)
-      })
+    this.props.updateUsername(e.target.value)
   }
 
   handlePasswordChange = (e) => {
-    this.setState({[e.target.name]: e.target.value},
-      () => {
-        // console.log(this.state.password)
-      })
+    this.props.updatePassword(e.target.value)
   }
 
   handleSignUpSubmit = (e) => {
@@ -32,18 +22,18 @@ class SignUpPage extends Component {
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        "user": {
-          "username": this.state.username,
-          "password": this.state.password
-        }
+        "username": this.props.username,
+        "password": this.props.password
       })
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("Created user: ", userLogInData)
+      console.log("User creation status: ", userLogInData)
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
       localStorage.setItem('username', userLogInData.user.username)
+      console.log("What is this.props from redux store?", this.props)
+      this.props.updateUserData(userLogInData)
       this.props.history.push('/homepage')
     })
 
@@ -82,4 +72,29 @@ class SignUpPage extends Component {
   }
 }
 
-export default withRouter(SignUpPage);
+const mapStateToProps = (store) => {
+  // console.log("redux store: ", store);
+  
+  return {
+    username: store.username,
+    password: store.password,
+    userData: store.userData
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  
+  return {
+    updateUsername: (newUsername) => {
+      dispatch({ type: "UPDATE_USERNAME", username: newUsername })
+    },
+    updatePassword: (newPassword) => {
+      dispatch({ type: "UPDATE_PASSWORD", password: newPassword })
+    },
+    updateUserData: (newUser) => {
+      dispatch({ type: "UPDATE_USERDATA", userData: newUser })
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignUpPage));
