@@ -86,7 +86,7 @@ class IceCreamOrderPage extends Component {
 
         <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
           
-          <input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>
+          {/*<input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>*/}
           
           <h3 className="formLabel">What do you feel like having today?</h3> 
           <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
@@ -95,7 +95,7 @@ class IceCreamOrderPage extends Component {
           </select>
 
           <h3 className="formLabel">Choose your toppings!</h3>
-          <label><span className="iceCreamFormInput">M&M's?</span>
+          <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">M&M's?</span>
             <input name="m&ms"
               type="checkbox"
               checked={this.state["m&ms"]}
@@ -103,7 +103,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Peanuts?</span>
+          <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">Peanuts?</span>
             <input name="peanuts"
               type="checkbox"
               checked={this.state.peanuts}
@@ -111,7 +111,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Sprinkles?</span>
+          <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">Sprinkles?</span>
             <input name="sprinkles"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -120,7 +120,7 @@ class IceCreamOrderPage extends Component {
           </label>
 
           <h3 className="formLabel">Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
-          <label><span className="iceCreamFormInput">Hell yeah I do! <span role="img" aria-label="hot chocolate fudge">💩</span></span>
+          <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">Hell yeah I do! <span role="img" aria-label="hot chocolate fudge">💩</span></span>
             <input name="hot chocolate fudge"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}

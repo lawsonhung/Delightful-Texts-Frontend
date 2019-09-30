@@ -44,10 +44,14 @@ class HomePage extends Component {
           <button className="logOutBtn" onClick={this.logOut} >Log Out <span role="img" aria-label="sad face">😢</span> Are you sure??? </button>
         </div>
 
-        <div className="homepage backgroundImg " >
-          <h1 className="welcomeMsg"><span role="img" aria-label="happy">🍨</span> Hey there, {localStorage.username}! <span role="img" aria-label="happy">🍨</span></h1>
-          <IceCreamOrderPage />
+        <div className="homepage " >
+          <div className="parallax1">
+            <h1 className="welcomeMsg"><span role="img" aria-label="happy">🍨</span> Hey there, {localStorage.username}! <span role="img" aria-label="happy">🍨</span></h1>
+            <IceCreamOrderPage />
+        </div>
+        <div className="parallax2">
           <ViewIceCreamOrdersPage />
+        </div>
         </div>
         
       </div>

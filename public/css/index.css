@@ -25,7 +25,7 @@ input:hover, label:hover, select:hover, option:hover, button {
 
 /**************  Background Image **************/
 
-.backgroundImg, .registrationPage {
+.parallax1, .registrationPage {
   background-image: url("body bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -102,7 +102,8 @@ input:hover {
 }
 
 .logOutBtn {
-  background-image: url("logout btn hover.jpg");
+  background-image: url("logout btn bg.jpg");
+  background-size: cover;
   font-size: 1.1em;
   border-radius: 25px 0 0 25px;
   border: 2px solid #CCCCCC;
@@ -112,7 +113,9 @@ input:hover {
 }
 
 .logOutBtn:hover {
+  background-image: url("logout btn hover bg.jpg");
   background-size: cover;
+  background-position: center;
   text-shadow: 2px 2px 2px #000000;
   opacity: 0.9;
   transition: 0.25s;
@@ -124,11 +127,12 @@ input:hover {
 
 .homepage {
   text-align: center;
-  padding-top: 13em;
+  padding-top: 0.1em;
 }
 
 .welcomeMsg {
   font-size: 4em;
+  padding-top: 3.5em;
 }
 
 /************** Homepage Content End *******************/
@@ -140,6 +144,7 @@ input:hover {
   font-size: 2.5em;
   position: sticky;
   top: 3.75em;
+  display: inline-block;
 }
 
 .iceCreamOrderForm .formLabel, .iceCreamFormInput {
@@ -154,6 +159,18 @@ select {
 select:hover {
   background-color: #6699FF;
   color: #FFFFFF;
+  width: 15%;
+  transition: 0.25s;
+}
+
+.iceCreamFormInputCheckboxLabel {
+  transition: 0.25s;
+  border-radius: 5px;
+}
+
+.iceCreamFormInputCheckboxLabel:hover {
+  background-color: #6699FF;
+  opacity: 0.7;
   transition: 0.25s;
 }
 
@@ -163,12 +180,12 @@ select:hover {
 }
 
 .iceCreamOrderFormSubmitBtn {
+  background-image: url("ice cream order submit btn bg.jpeg");
   font-family: 'Indie Flower', cursive;
   text-shadow: 2px 2px 5px #3E3E3E;
   font-size: 3em;
   border-radius: 25px;
   padding: 0.25em;
-  background-image: url("ice cream order submit btn bg.jpeg");
   opacity: 0.7;
   transition: 0.25s;
   color: #FFFFFF;
@@ -177,28 +194,55 @@ select:hover {
 }
 
 .iceCreamOrderFormSubmitBtn:hover {
+  background-image: url("ice cream order submit btn hover bg.jpg");
+  background-size: cover;
+  background-position: 50% 80%;
   opacity: 1;
-  transition: 0.25s;
+  width: 90%;
+  transition: 2s;
+  transition-timing-function: ease-out;
 }
 
 /************ iceCreamOrderForm End ***********/
 
 /************ Ice Cream Orders **************/
 
+.parallax2 {
+  background-image: url("parallax2 bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 .username {
   color: #7A0099;
   font-size: 3em;
+  text-shadow: 2px 2px 5px #FFFFFF;
+}
+
+.iceCreamOrdersTitle {
+  color: #FFFFFF;
+  margin: 0;
+  text-shadow: 2px 2px 5px #000000;
+  position: sticky;
+  top: 3em;
+  display: inline-block;
+}
+
+.iceCreamOrdersTitleDevilEmoji {
+  text-shadow: 2px 2px 5px #FFFFFF;
 }
 
 .orderDescription {
   color: #FFFFFF;
-  background-color: #290033;
+  background-color: #330033;
   opacity: 0.9;
   border-radius: 15px;
   border: 2px solid #CCCCCC;
-  box-shadow: 2px 2px 5px #3E3E3E;
-  display: inline-block;
+  box-shadow: 2px 2px 5px #FFFFFF;
   margin: 0.5em;
+  display: inline-block;
 }
 
 /************ Ice Cream Orders End **************/
