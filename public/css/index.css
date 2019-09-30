@@ -102,7 +102,8 @@ input:hover {
 }
 
 .logOutBtn {
-  background-image: url("logout btn hover.jpg");
+  background-image: url("logout btn bg.jpg");
+  background-size: cover;
   font-size: 1.1em;
   border-radius: 25px 0 0 25px;
   border: 2px solid #CCCCCC;
@@ -112,7 +113,9 @@ input:hover {
 }
 
 .logOutBtn:hover {
+  background-image: url("logout btn hover bg.jpg");
   background-size: cover;
+  background-position: center;
   text-shadow: 2px 2px 2px #000000;
   opacity: 0.9;
   transition: 0.25s;
@@ -165,7 +168,7 @@ select:hover {
 
 .iceCreamFormInputCheckboxLabel:hover {
   background-color: #6699FF;
-  opacity: 0.9;
+  opacity: 0.7;
   transition: 0.25s;
 }
 
@@ -189,9 +192,13 @@ select:hover {
 }
 
 .iceCreamOrderFormSubmitBtn:hover {
+  background-image: url("ice cream order submit btn hover bg.jpg");
+  background-size: cover;
+  background-position: center bottom;
   opacity: 1;
-  width: 30%;
-  transition: 0.25s;
+  width: 90%;
+  transition: 3s;
+  transition-timing-function: ease-out;
 }
 
 /************ iceCreamOrderForm End ***********/
