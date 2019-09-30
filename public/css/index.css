@@ -132,7 +132,7 @@ input:hover {
 
 .welcomeMsg {
   font-size: 4em;
-  padding-top: 3em;
+  padding-top: 3.5em;
 }
 
 /************** Homepage Content End *******************/
@@ -144,6 +144,7 @@ input:hover {
   font-size: 2.5em;
   position: sticky;
   top: 3.75em;
+  display: inline-block;
 }
 
 .iceCreamOrderForm .formLabel, .iceCreamFormInput {
@@ -226,6 +227,11 @@ select:hover {
   text-shadow: 2px 2px 5px #000000;
   position: sticky;
   top: 3em;
+  display: inline-block;
+}
+
+.iceCreamOrdersTitleDevilEmoji {
+  text-shadow: 2px 2px 5px #FFFFFF;
 }
 
 .orderDescription {
@@ -235,8 +241,8 @@ select:hover {
   border-radius: 15px;
   border: 2px solid #CCCCCC;
   box-shadow: 2px 2px 5px #FFFFFF;
-  display: inline-block;
   margin: 0.5em;
+  display: inline-block;
 }
 
 /************ Ice Cream Orders End **************/
