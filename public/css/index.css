@@ -179,12 +179,12 @@ select:hover {
 }
 
 .iceCreamOrderFormSubmitBtn {
+  background-image: url("ice cream order submit btn bg.jpeg");
   font-family: 'Indie Flower', cursive;
   text-shadow: 2px 2px 5px #3E3E3E;
   font-size: 3em;
   border-radius: 25px;
   padding: 0.25em;
-  background-image: url("ice cream order submit btn bg.jpeg");
   opacity: 0.7;
   transition: 0.25s;
   color: #FFFFFF;

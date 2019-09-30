@@ -47,7 +47,7 @@ class ViewIceCreamOrdersPage extends Component {
                   <span role="img" aria-label="ice cream">🍦</span> Order {order.id}: A {order.size} of {order.flavor} ice cream
                   {order.m_and_ms || order.peanuts || order.sprinkles ? " topped with " : null}
                   {order.m_and_ms ? "M&M's" : null} {order.peanuts ? "peanuts" : null} {order.sprinkles ? "sprinkles" : null} 
-                  {order.hot_chocolate_fudge ? "finished with some hot chocolate fudge" : null} <span role="img" aria-label="ice cream">🍦</span>
+                  {order.hot_chocolate_fudge ? " finished with some hot chocolate fudge" : null} <span role="img" aria-label="ice cream">🍦</span>
               </h2>
               <br/>
             </div>
