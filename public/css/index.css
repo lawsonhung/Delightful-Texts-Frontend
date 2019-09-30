@@ -25,7 +25,7 @@ input:hover, label:hover, select:hover, option:hover, button {
 
 /**************  Background Image **************/
 
-.backgroundImg, .registrationPage {
+.parallax1, .registrationPage {
   background-image: url("body bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -127,11 +127,12 @@ input:hover {
 
 .homepage {
   text-align: center;
-  padding-top: 13em;
+  padding-top: 0.1em;
 }
 
 .welcomeMsg {
   font-size: 4em;
+  padding-top: 3em;
 }
 
 /************** Homepage Content End *******************/
@@ -205,9 +206,22 @@ select:hover {
 
 /************ Ice Cream Orders **************/
 
+.parallax2 {
+  background-image: url("parallax2 bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 .username {
   color: #7A0099;
   font-size: 3em;
+}
+
+.iceCreamOrders {
+  color: #FFFFFF;
+  margin: 0;
 }
 
 .orderDescription {
