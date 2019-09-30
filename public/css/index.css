@@ -154,6 +154,18 @@ select {
 select:hover {
   background-color: #6699FF;
   color: #FFFFFF;
+  width: 15%;
+  transition: 0.25s;
+}
+
+.iceCreamFormInputCheckboxLabel {
+  transition: 0.25s;
+  border-radius: 5px;
+}
+
+.iceCreamFormInputCheckboxLabel:hover {
+  background-color: #6699FF;
+  opacity: 0.9;
   transition: 0.25s;
 }
 
@@ -178,6 +190,7 @@ select:hover {
 
 .iceCreamOrderFormSubmitBtn:hover {
   opacity: 1;
+  width: 30%;
   transition: 0.25s;
 }
 
