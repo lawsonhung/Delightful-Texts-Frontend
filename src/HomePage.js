@@ -24,16 +24,16 @@ class HomePage extends Component {
 
       })
     })
-    localStorage.removeItem('jwt')
-    localStorage.removeItem('userID')
-    localStorage.removeItem('username')
-    // localStorage.clear()
+    // localStorage.removeItem('jwt')
+    // localStorage.removeItem('userID')
+    // localStorage.removeItem('username')
+    localStorage.clear()
     this.props.history.push('/')
   }
 
   render() {
     // console.log("Homepage this.state.userID: ", this.state.userID);
-    console.log("Homepage this.props after connecting to redux store: ", this.props);
+    // console.log("Homepage this.props after connecting to redux store: ", this.props);
     
     
     return (
@@ -45,9 +45,9 @@ class HomePage extends Component {
         </div>
 
         <div className="homepage backgroundImg " >
-          <h1 className="welcomeMsg">Welcome back, {localStorage.username}!</h1>
+          <h1 className="welcomeMsg"><span role="img" aria-label="happy">🍨</span> Hey there, {localStorage.username}! <span role="img" aria-label="happy">🍨</span></h1>
           <IceCreamOrderPage />
-          <ViewIceCreamOrdersPage userID={this.state.userID}/>
+          <ViewIceCreamOrdersPage />
         </div>
         
       </div>

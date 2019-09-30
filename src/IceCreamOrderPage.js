@@ -39,8 +39,20 @@ class IceCreamOrderPage extends Component {
 
   handleIceCreamOrderSubmit = (e) => {
     e.preventDefault()
-
+    
     console.log("State being sent to fetch post create ice cream: ", this.state)
+
+    // Example body of post request for postman
+    // {
+    //   "flavor": "Vanilla",
+    //   "m_and_ms": false,
+    //   "peanuts": false,
+    //   "size": "cone",
+    //   "sprinkles": false,
+    //   "hot_chocolate_fudge": false,
+    //   "user_id": localStorage.userID,
+    //   "phone_number": "twilio phone number"
+    // }
 
     fetch("http://localhost:3000/api/v1/ice_creams", {
       method: "POST",
@@ -54,7 +66,9 @@ class IceCreamOrderPage extends Component {
         "peanuts": this.state.peanuts,
         "size": this.state.size,
         "sprinkles": this.state.sprinkles,
-        "hot_chocolate_fudge": this.state["hot chocolate fudge"]
+        "hot_chocolate_fudge": this.state["hot chocolate fudge"],
+        "user_id": localStorage.userID,
+        "phone_number": "twilio phone number"
       })
     })
     .then(r => r.json())
@@ -67,10 +81,13 @@ class IceCreamOrderPage extends Component {
   render() {
     return (
       <div>
-        <h1 className="iceCreamOrderFormTitle">Ice cream, you scream, we all scream for ice cream!</h1>
+        <h1 className="iceCreamOrderFormTitle">I scream, you scream, we all scream for ice cream!</h1>
         {/*this.renderIceCreamOrders()*/}
 
         <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
+          
+          <input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>
+          
           <h3 className="formLabel">What do you feel like having today?</h3> 
           <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
             <option value="vanilla">Vanilla</option>
@@ -78,7 +95,7 @@ class IceCreamOrderPage extends Component {
           </select>
 
           <h3 className="formLabel">Choose your toppings!</h3>
-          <label><span className="iceCreamFormInput">M&M's:</span>
+          <label><span className="iceCreamFormInput">M&M's?</span>
             <input name="m&ms"
               type="checkbox"
               checked={this.state["m&ms"]}
@@ -86,7 +103,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Peanuts:</span>
+          <label><span className="iceCreamFormInput">Peanuts?</span>
             <input name="peanuts"
               type="checkbox"
               checked={this.state.peanuts}
@@ -94,7 +111,7 @@ class IceCreamOrderPage extends Component {
               >
             </input>
           </label>
-          <label><span className="iceCreamFormInput">Sprinkles:</span>
+          <label><span className="iceCreamFormInput">Sprinkles?</span>
             <input name="sprinkles"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -103,7 +120,7 @@ class IceCreamOrderPage extends Component {
           </label>
 
           <h3 className="formLabel">Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
-          <label><span className="iceCreamFormInput">Hell yeah I do!</span>
+          <label><span className="iceCreamFormInput">Hell yeah I do! <span role="img" aria-label="hot chocolate fudge">💩</span></span>
             <input name="hot chocolate fudge"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}
@@ -111,7 +128,7 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <h3 className="formLabel">Size:</h3>
+          <h3 className="formLabel">How much ice cream do you want?</h3>
           <select className="iceCreamFormInput" name="size" value={this.state.size} onChange={this.handleIceCreamOrderChange}>
             <option value="cone">Cone</option>
             <option value="small cup">Small Cup</option>

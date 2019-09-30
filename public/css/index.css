@@ -50,7 +50,7 @@ input:hover, label:hover, select:hover, option:hover, button {
   border-radius: 15px;
 }
 
-.registrationPage input[type=submit] {
+.registrationPage input {
   font-size: 1em;
   box-shadow: 2px 2px 5px #3E3E3E;
 }
@@ -70,11 +70,11 @@ input:hover {
 .logInSignUpPages {
   display: flex;
   justify-content: space-evenly;
-  padding: 40vh 0em 30vh 0em;
+  padding: 40vh 0em 20vh 0em;
 }
 
 .logInSignUpDivider {
-  border: 1px solid #000000;
+  border: 1px solid #3E3E3E;
   height: 35vh;
 }
 
@@ -135,11 +135,14 @@ input:hover {
 
 /************ iceCreamOrderForm ***********/
 
-.iceCreamOrderForm .formLabel {
-  font-size: 2em;
+.iceCreamOrderFormTitle {
+  color: #FFFF80;
+  font-size: 2.5em;
+  position: sticky;
+  top: 3.75em;
 }
 
-.iceCreamFormInput {
+.iceCreamOrderForm .formLabel, .iceCreamFormInput {
   font-size: 2em;
 }
 
@@ -149,7 +152,7 @@ select {
 }
 
 select:hover {
-  background-color: #0000FF;
+  background-color: #6699FF;
   color: #FFFFFF;
   transition: 0.25s;
 }
@@ -168,7 +171,8 @@ select:hover {
   background-image: url("ice cream order submit btn bg.jpeg");
   opacity: 0.7;
   transition: 0.25s;
-  color: #FFFFFF;  border: 2px solid #CCCCCC;
+  color: #FFFFFF;
+  border: 2px solid #CCCCCC;
   box-shadow: 2px 2px 5px #3E3E3E;
 }
 
@@ -178,3 +182,23 @@ select:hover {
 }
 
 /************ iceCreamOrderForm End ***********/
+
+/************ Ice Cream Orders **************/
+
+.username {
+  color: #7A0099;
+  font-size: 3em;
+}
+
+.orderDescription {
+  color: #FFFFFF;
+  background-color: #290033;
+  opacity: 0.9;
+  border-radius: 15px;
+  border: 2px solid #CCCCCC;
+  box-shadow: 2px 2px 5px #3E3E3E;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+/************ Ice Cream Orders End **************/
