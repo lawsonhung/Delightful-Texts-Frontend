@@ -28,11 +28,11 @@ class SignUpPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("User creation status: ", userLogInData)
+      // console.log("User creation status: ", userLogInData)
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
       localStorage.setItem('username', userLogInData.user.username)
-      console.log("What is this.props from redux store?", this.props)
+      // console.log("What is this.props from redux store?", this.props)
       this.props.updateUserData(userLogInData)
       this.props.history.push('/homepage')
     })

@@ -45,9 +45,9 @@ class HomePage extends Component {
         </div>
 
         <div className="homepage backgroundImg " >
-          <h1 className="welcomeMsg">Welcome back, {localStorage.username}!</h1>
+          <h1 className="welcomeMsg"><span role="img" aria-label="happy">🍨</span> Hey there, {localStorage.username}! <span role="img" aria-label="happy">🍨</span></h1>
           <IceCreamOrderPage />
-          <ViewIceCreamOrdersPage userID={this.state.userID}/>
+          <ViewIceCreamOrdersPage />
         </div>
         
       </div>

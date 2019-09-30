@@ -39,17 +39,19 @@ class IceCreamOrderPage extends Component {
 
   handleIceCreamOrderSubmit = (e) => {
     e.preventDefault()
-
+    
     console.log("State being sent to fetch post create ice cream: ", this.state)
 
-    // Example body of post request
+    // Example body of post request for postman
     // {
     //   "flavor": "Vanilla",
     //   "m_and_ms": false,
     //   "peanuts": false,
     //   "size": "cone",
     //   "sprinkles": false,
-    //   "hot_chocolate_fudge": false
+    //   "hot_chocolate_fudge": false,
+    //   "user_id": localStorage.userID,
+    //   "phone_number": "twilio phone number"
     // }
 
     fetch("http://localhost:3000/api/v1/ice_creams", {
@@ -64,7 +66,9 @@ class IceCreamOrderPage extends Component {
         "peanuts": this.state.peanuts,
         "size": this.state.size,
         "sprinkles": this.state.sprinkles,
-        "hot_chocolate_fudge": this.state["hot chocolate fudge"]
+        "hot_chocolate_fudge": this.state["hot chocolate fudge"],
+        "user_id": localStorage.userID,
+        "phone_number": "twilio phone number"
       })
     })
     .then(r => r.json())
@@ -77,7 +81,7 @@ class IceCreamOrderPage extends Component {
   render() {
     return (
       <div>
-        <h1 className="iceCreamOrderFormTitle">Ice cream, you scream, we all scream for ice cream!</h1>
+        <h1 className="iceCreamOrderFormTitle">I scream, you scream, we all scream for ice cream!</h1>
         {/*this.renderIceCreamOrders()*/}
 
         <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
@@ -116,7 +120,7 @@ class IceCreamOrderPage extends Component {
           </label>
 
           <h3 className="formLabel">Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
-          <label><span className="iceCreamFormInput">Hell yeah I do!</span>
+          <label><span className="iceCreamFormInput">Hell yeah I do! <span role="img" aria-label="hot chocolate fudge">💩</span></span>
             <input name="hot chocolate fudge"
               type="checkbox"
               onChange={this.handleIceCreamOrderChange}

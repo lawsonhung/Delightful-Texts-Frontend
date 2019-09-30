@@ -136,14 +136,13 @@ input:hover {
 /************ iceCreamOrderForm ***********/
 
 .iceCreamOrderFormTitle {
-  color: #ffff80;
+  color: #FFFF80;
+  font-size: 2.5em;
+  position: sticky;
+  top: 3.75em;
 }
 
-.iceCreamOrderForm .formLabel {
-  font-size: 2em;
-}
-
-.iceCreamFormInput {
+.iceCreamOrderForm .formLabel, .iceCreamFormInput {
   font-size: 2em;
 }
 
@@ -172,7 +171,8 @@ select:hover {
   background-image: url("ice cream order submit btn bg.jpeg");
   opacity: 0.7;
   transition: 0.25s;
-  color: #FFFFFF;  border: 2px solid #CCCCCC;
+  color: #FFFFFF;
+  border: 2px solid #CCCCCC;
   box-shadow: 2px 2px 5px #3E3E3E;
 }
 
@@ -182,3 +182,23 @@ select:hover {
 }
 
 /************ iceCreamOrderForm End ***********/
+
+/************ Ice Cream Orders **************/
+
+.username {
+  color: #7A0099;
+  font-size: 3em;
+}
+
+.orderDescription {
+  color: #FFFFFF;
+  background-color: #290033;
+  opacity: 0.9;
+  border-radius: 15px;
+  border: 2px solid #CCCCCC;
+  box-shadow: 2px 2px 5px #3E3E3E;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+/************ Ice Cream Orders End **************/
