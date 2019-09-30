@@ -39,7 +39,7 @@ class ViewIceCreamOrdersPage extends Component {
 
     return (
       <div>
-        <h1 className="iceCreamOrders"><span role="img" aria-label="devil">😈</span> All of your guilty indulgences (We know everything about you... <span className="username">{localStorage.username}</span>) <span role="img" aria-label="devil">😈</span></h1>
+        <h1 className="iceCreamOrdersTitle"><span role="img" aria-label="devil">😈</span> We know everything about you... <span className="username">{localStorage.username}</span> <span role="img" aria-label="devil">😈</span></h1>
         {userIceCreamOrders.map(order => {
           return (
             <div>

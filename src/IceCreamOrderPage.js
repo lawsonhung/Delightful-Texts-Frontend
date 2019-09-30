@@ -86,7 +86,7 @@ class IceCreamOrderPage extends Component {
 
         <form className="iceCreamOrderForm" onSubmit={this.handleIceCreamOrderSubmit}>
           
-          <input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>
+          {/*<input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>*/}
           
           <h3 className="formLabel">What do you feel like having today?</h3> 
           <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>

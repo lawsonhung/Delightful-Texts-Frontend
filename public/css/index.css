@@ -217,20 +217,24 @@ select:hover {
 .username {
   color: #7A0099;
   font-size: 3em;
+  text-shadow: 2px 2px 5px #FFFFFF;
 }
 
-.iceCreamOrders {
+.iceCreamOrdersTitle {
   color: #FFFFFF;
   margin: 0;
+  text-shadow: 2px 2px 5px #000000;
+  position: sticky;
+  top: 3em;
 }
 
 .orderDescription {
   color: #FFFFFF;
-  background-color: #290033;
+  background-color: #330033;
   opacity: 0.9;
   border-radius: 15px;
   border: 2px solid #CCCCCC;
-  box-shadow: 2px 2px 5px #3E3E3E;
+  box-shadow: 2px 2px 5px #FFFFFF;
   display: inline-block;
   margin: 0.5em;
 }
