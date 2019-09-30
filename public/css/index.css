@@ -195,10 +195,10 @@ select:hover {
 .iceCreamOrderFormSubmitBtn:hover {
   background-image: url("ice cream order submit btn hover bg.jpg");
   background-size: cover;
-  background-position: center bottom;
+  background-position: 50% 80%;
   opacity: 1;
   width: 90%;
-  transition: 3s;
+  transition: 2s;
   transition-timing-function: ease-out;
 }
 
