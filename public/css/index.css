@@ -106,10 +106,11 @@ input:hover {
   background-size: cover;
   font-size: 1.1em;
   border-radius: 25px 0 0 25px;
-  border: 2px solid #CCCCCC;
+  border: 1px solid #CCCCCC;
   opacity: 0.9;
   color: #FFFFFF;
   transition: 0.25s;
+  box-shadow: -5px 0px 10px 3px #3E3E3E;
 }
 
 .logOutBtn:hover {
