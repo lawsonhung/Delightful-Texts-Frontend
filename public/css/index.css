@@ -80,6 +80,47 @@ input:hover {
 
 /************ Registration Page End************/
 
+/************* welcomeOverlay ***************/
+
+.welcomeOverlay {
+  position: fixed;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("welcome overlay bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.overlayMsg {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  text-shadow: 2px 4px 5px #000000;
+  text-align: center;
+}
+
+.welcomeOverlayMsg {
+  font-size: 8em;
+  margin-top: 10vh;
+}
+
+.welcomeOverlayMsg:hover {
+  cursor: pointer;
+}
+
+/************* welcomeOverlay End ***************/
+
 /********** Header Bar ***********/
 
 .headerBar {
@@ -91,6 +132,7 @@ input:hover {
   display: flex;
   justify-content: space-around;
   box-shadow: 0 8px 6px -5px #000000;
+  z-index: 1;
 }
 
 .appName {
@@ -113,13 +155,28 @@ input:hover {
   box-shadow: -5px 0px 10px 3px #3E3E3E;
 }
 
-.logOutBtn:hover {
+.logOutBtn:hover, .flipCard:hover .logOutBtn {
   background-image: url("logout btn hover bg.jpg");
   background-size: cover;
   background-position: center;
   text-shadow: 2px 2px 2px #000000;
   opacity: 0.9;
   transition: 0.25s;
+}
+
+.flipCard {
+  perspective: 100px;
+  height: inherit;
+}
+
+.flipCardInner {
+  transition: 0.25s;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(-45deg);
 }
 
 /********** Header Bar End ***********/
@@ -146,10 +203,15 @@ input:hover {
   position: sticky;
   top: 3.75em;
   display: inline-block;
+  z-index: 1;
 }
 
 .iceCreamOrderForm .formLabel, .iceCreamFormInput {
   font-size: 2em;
+}
+
+.formOrderNumber {
+  color: #FFFF80;
 }
 
 select {
@@ -207,6 +269,37 @@ select:hover {
 
 /************ iceCreamOrderForm End ***********/
 
+/************* welcomeToHellOverlay ***************/
+
+.welcomeToHellOverlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("hell overlay bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welcomeToHellOverlayMsg {
+  font-size: 8em;
+}
+
+.welcomeToHellOverlayMsg:hover {
+  cursor: pointer;
+}
+
+/************* welcomeToHellOverlay End ***************/
+
 /************ Ice Cream Orders **************/
 
 .parallax2 {
@@ -230,6 +323,7 @@ select:hover {
   position: sticky;
   top: 3em;
   display: inline-block;
+  z-index: 2;
 }
 
 .iceCreamOrdersTitleDevilEmoji {
@@ -248,3 +342,4 @@ select:hover {
 }
 
 /************ Ice Cream Orders End **************/
+

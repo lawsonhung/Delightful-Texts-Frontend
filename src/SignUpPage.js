@@ -35,6 +35,7 @@ class SignUpPage extends Component {
       // console.log("What is this.props from redux store?", this.props)
       this.props.updateUserData(userLogInData)
       this.props.history.push('/homepage')
+      document.getElementById("welcomeOverlay").style.display = "block";
     })
 
   }

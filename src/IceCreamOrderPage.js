@@ -74,7 +74,11 @@ class IceCreamOrderPage extends Component {
     .then(r => r.json())
     .then(data => {
       console.log("What is data after submitting ice cream form?", data)
+      // this.props.orderIceCream()
+      // this.props.updateIceCreamOrders()
     })
+
+    this.props.turnOnHellOverlay()
     
   }
 
@@ -88,13 +92,13 @@ class IceCreamOrderPage extends Component {
           
           {/*<input className="iceCreamOrderFormSubmitBtn" type="submit" value="this submit button should stay hidden under the header"></input>*/}
           
-          <h3 className="formLabel">1. What do you feel like having today?</h3> 
+          <h3 className="formLabel"><span className="formOrderNumber">1.</span> What do you feel like having today?</h3> 
           <select className="iceCreamFormInput" name="flavor" value={this.state.flavor} onChange={this.handleIceCreamOrderChange}>
             <option value="vanilla">Vanilla</option>
             <option value="chocolate">Chocolate</option>
           </select>
 
-          <h3 className="formLabel">2. Choose your toppings!</h3>
+          <h3 className="formLabel"><span className="formOrderNumber">2.</span> Choose your toppings!</h3>
           <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">M&M's?</span>
             <input name="m&ms"
               type="checkbox"
@@ -119,7 +123,7 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <h3 className="formLabel">3. Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
+          <h3 className="formLabel"><span className="formOrderNumber">3.</span> Want some <span className="hotChocolateFudge">hot chocolate fudge</span> with that?</h3>
           <label><span className="iceCreamFormInput iceCreamFormInputCheckboxLabel">Hell yeah I do! <span role="img" aria-label="hot chocolate fudge">💩</span></span>
             <input name="hot chocolate fudge"
               type="checkbox"
@@ -128,7 +132,7 @@ class IceCreamOrderPage extends Component {
             </input>
           </label>
 
-          <h3 className="formLabel">4. How much ice cream do you want?</h3>
+          <h3 className="formLabel"><span className="formOrderNumber">4.</span> How much ice cream do you want?</h3>
           <select className="iceCreamFormInput" name="size" value={this.state.size} onChange={this.handleIceCreamOrderChange}>
             <option value="cone">Cone</option>
             <option value="small cup">Small Cup</option>

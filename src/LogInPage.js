@@ -103,6 +103,7 @@ class LogInPage extends Component {
       
       
       this.props.history.push('/homepage')
+      document.getElementById("welcomeOverlay").style.display = "block";
     })
 
   }
