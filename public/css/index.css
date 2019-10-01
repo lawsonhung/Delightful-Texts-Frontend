@@ -91,6 +91,7 @@ input:hover {
   display: flex;
   justify-content: space-around;
   box-shadow: 0 8px 6px -5px #000000;
+  z-index: 1;
 }
 
 .appName {
@@ -161,6 +162,7 @@ input:hover {
   position: sticky;
   top: 3.75em;
   display: inline-block;
+  z-index: 1;
 }
 
 .iceCreamOrderForm .formLabel, .iceCreamFormInput {
@@ -249,6 +251,7 @@ select:hover {
   position: sticky;
   top: 3em;
   display: inline-block;
+  z-index: 2;
 }
 
 .iceCreamOrdersTitleDevilEmoji {
@@ -267,3 +270,4 @@ select:hover {
 }
 
 /************ Ice Cream Orders End **************/
+
