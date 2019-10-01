@@ -122,6 +122,10 @@ input:hover {
   transition: 0.25s;
 }
 
+.logOutSadEmoji {
+  font-size: 4em;
+}
+
 /********** Header Bar End ***********/
 
 /************** Homepage Content *******************/

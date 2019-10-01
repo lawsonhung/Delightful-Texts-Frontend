@@ -74,6 +74,7 @@ class IceCreamOrderPage extends Component {
     .then(r => r.json())
     .then(data => {
       console.log("What is data after submitting ice cream form?", data)
+      this.props.orderIceCream()
     })
     
   }
