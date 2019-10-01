@@ -77,6 +77,8 @@ class IceCreamOrderPage extends Component {
       // this.props.orderIceCream()
       // this.props.updateIceCreamOrders()
     })
+
+    this.props.turnOnHellOverlay()
     
   }
 

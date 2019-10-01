@@ -30,6 +30,24 @@ class HomePage extends Component {
     })
   }
 
+  logOut = () => {
+    fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+
+      })
+    })
+    // localStorage.removeItem('jwt')
+    // localStorage.removeItem('userID')
+    // localStorage.removeItem('username')
+    localStorage.clear()
+    this.props.history.push('/')
+  }
+
   filterUserIceCreamOrders = () => {
     this.state.iceCreamOrders.map(order => {
 
@@ -70,22 +88,20 @@ class HomePage extends Component {
     // })
   }
 
-  logOut = () => {
-    fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
+  turnOffWelcomeOverlay = () => {
+    document.getElementById("welcomeOverlay").style.display = "none";
+  }
 
-      })
-    })
-    // localStorage.removeItem('jwt')
-    // localStorage.removeItem('userID')
-    // localStorage.removeItem('username')
-    localStorage.clear()
-    this.props.history.push('/')
+  turnOnWelcomeOverlay = () => {
+    document.getElementById("welcomeOverlay").style.display = "block";
+  }
+
+  turnOffHellOverlay = () => {
+    document.getElementById("welcomeToHellOverlay").style.display = "none";
+  }
+
+  turnOnHellOverlay = () => {
+    document.getElementById("welcomeToHellOverlay").style.display = "block";
   }
 
   render() {
@@ -97,6 +113,13 @@ class HomePage extends Component {
     
     return (
       <div>
+
+        <div className="welcomeOverlay" id="welcomeOverlay" onClick={() => this.turnOffWelcomeOverlay()}>
+          <h1 className="welcomeOverlayMsg"> Welcome to Delightful Texts, {localStorage.username}!
+            <br/>
+            Click anywhere to continue 
+          </h1> 
+        </div>
 
         <div className="headerBar">
           <h1 className="appName">Delightful Texts</h1>
@@ -112,8 +135,18 @@ class HomePage extends Component {
               filterUserIceCreamOrders={this.filterUserIceCreamOrders} 
               orderIceCream={this.orderIceCream} 
               updateIceCreamOrders={this.updateIceCreamOrders}
+              turnOnHellOverlay={this.turnOnHellOverlay}
             />
+
+          <div className="welcomeToHellOverlay" id="welcomeToHellOverlay" onClick={() => this.turnOffHellOverlay()}>
+            <h1 className="welcomeToHellOverlayMsg"> Welcome to hell... 
+              <br/>
+              Click anywhere to continue 
+            </h1> 
+          </div>
+
         </div>
+
         
         <div className="parallax2">
           <ViewIceCreamOrdersPage userIceCreamOrders={this.state.userIceCreamOrders} />

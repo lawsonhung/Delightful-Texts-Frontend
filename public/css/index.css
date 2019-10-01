@@ -80,6 +80,43 @@ input:hover {
 
 /************ Registration Page End************/
 
+/************* welcomeOverlay ***************/
+
+.welcomeOverlay {
+  position: fixed;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("hell overlay bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welcomeOverlayMsg {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  font-size: 8em;
+  text-shadow: 2px 4px 5px #000000;
+  text-align: center;
+}
+
+.welcomeOverlayMsg:hover {
+  cursor: pointer;
+}
+
+/************* welcomeOverlay End ***************/
+
 /********** Header Bar ***********/
 
 .headerBar {
@@ -227,6 +264,42 @@ select:hover {
 }
 
 /************ iceCreamOrderForm End ***********/
+
+/************* welcomeToHellOverlay ***************/
+
+.welcomeToHellOverlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("hell overlay bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welcomeToHellOverlayMsg {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  font-size: 8em;
+  text-shadow: 2px 4px 5px #000000;
+}
+
+.welcomeToHellOverlayMsg:hover {
+  cursor: pointer;
+}
+
+/************* welcomeToHellOverlay End ***************/
 
 /************ Ice Cream Orders **************/
 
