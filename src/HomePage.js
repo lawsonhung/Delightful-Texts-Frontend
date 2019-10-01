@@ -115,7 +115,7 @@ class HomePage extends Component {
       <div>
 
         <div className="welcomeOverlay" id="welcomeOverlay" onClick={() => this.turnOffWelcomeOverlay()}>
-          <h1 className="welcomeOverlayMsg"> Welcome to Delightful Texts, {localStorage.username}!
+          <h1 className="welcomeOverlayMsg overlayMsg"> Welcome to Delightful Texts, {localStorage.username}!
             <br/>
             Click anywhere to continue 
           </h1> 
@@ -123,7 +123,7 @@ class HomePage extends Component {
 
         <div className="headerBar">
           <h1 className="appName">Delightful Texts</h1>
-          <div class="flipCard">
+          <div className="flipCard">
             <button className="logOutBtn flipCardInner" onClick={this.logOut} >Log Out <span  role="img" aria-label="sad face">😢</span> Are you sure??? </button>
           </div>
         </div>
@@ -139,7 +139,7 @@ class HomePage extends Component {
             />
 
           <div className="welcomeToHellOverlay" id="welcomeToHellOverlay" onClick={() => this.turnOffHellOverlay()}>
-            <h1 className="welcomeToHellOverlayMsg"> Welcome to hell... 
+            <h1 className="welcomeToHellOverlayMsg overlayMsg"> Welcome to hell... 
               <br/>
               Click anywhere to continue 
             </h1> 
