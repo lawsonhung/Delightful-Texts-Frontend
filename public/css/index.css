@@ -113,7 +113,7 @@ input:hover {
   box-shadow: -5px 0px 10px 3px #3E3E3E;
 }
 
-.logOutBtn:hover {
+.logOutBtn:hover, .flipCard:hover .logOutBtn {
   background-image: url("logout btn hover bg.jpg");
   background-size: cover;
   background-position: center;
@@ -122,8 +122,19 @@ input:hover {
   transition: 0.25s;
 }
 
-.logOutSadEmoji {
-  font-size: 4em;
+.flipCard {
+  perspective: 100px;
+  height: inherit;
+}
+
+.flipCardInner {
+  transition: 0.25s;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(-45deg);
 }
 
 /********** Header Bar End ***********/
@@ -154,6 +165,10 @@ input:hover {
 
 .iceCreamOrderForm .formLabel, .iceCreamFormInput {
   font-size: 2em;
+}
+
+.formOrderNumber {
+  color: #FFFF80;
 }
 
 select {

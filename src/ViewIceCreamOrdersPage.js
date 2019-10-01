@@ -10,6 +10,7 @@ class ViewIceCreamOrdersPage extends Component {
     return (
       <div>
         <h1 className="iceCreamOrdersTitle"><span className="iceCreamOrdersTitleDevilEmoji" role="img" aria-label="devil">😈</span> We know everything about you... <span className="username">{localStorage.username}</span> <span className="iceCreamOrdersTitleDevilEmoji" role="img" aria-label="devil">😈</span></h1>
+        
         {this.props.userIceCreamOrders.map(order => {
           
           return (
@@ -22,8 +23,9 @@ class ViewIceCreamOrdersPage extends Component {
               </h2>
               <br/>
             </div>
-          )
-        })}
+            )
+          })
+        }
       </div>
     );
   }
