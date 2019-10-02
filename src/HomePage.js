@@ -124,7 +124,7 @@ class HomePage extends Component {
         <div className="headerBar">
           <h1 className="appName">Delightful Texts</h1>
           <div className="flipCard">
-            <button className="logOutBtn flipCardInner" onClick={this.logOut} >Log Out <span  role="img" aria-label="sad face">😢</span> Are you sure??? </button>
+            <button className="logOutBtn flipCardInner" onClick={this.logOut} >Log Out <span className="logOutSadEmoji" role="img" aria-label="sad face">😢</span> Are you sure??? </button>
           </div>
         </div>
 
