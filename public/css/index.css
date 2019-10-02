@@ -4,6 +4,7 @@ body {
   margin: 0;
 }
 
+/* Gets rid of margin on top of page/window */
 /* h1 {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -72,6 +73,8 @@ input:hover, label:hover, select:hover, option:hover, button {
   color: #FFFFFF;
   transition: 0.25s;
   box-shadow: -5px 0px 10px 3px #3E3E3E;
+  display: inline-flex;
+  align-items: flex-start;
 }
 
 .logOutBtn:hover, .flipCard:hover .logOutBtn {
@@ -81,6 +84,10 @@ input:hover, label:hover, select:hover, option:hover, button {
   text-shadow: 2px 2px 2px #000000;
   opacity: 0.9;
   transition: 0.25s;
+}
+
+.logOutSadEmoji {
+  font-size: 3em;
 }
 
 .flipCard {
@@ -196,6 +203,8 @@ input:hover {
 .welcomeMsg {
   font-size: 4em;
   padding-top: 3.5em;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 /************** Homepage Content End *******************/
@@ -215,10 +224,6 @@ input:hover {
   font-size: 2em;
 }
 
-.iceCreamFormInputCheckboxLabel {
-  background-color: #6699FF;
-  opacity: 0.8;
-}
 
 .formOrderNumber {
   color: #FFFF80;
@@ -227,6 +232,7 @@ input:hover {
 select {
   transition: 0.25s;
   box-shadow: 2px 2px 5px #3E3E3E;
+  opacity: 0.8;
 }
 
 select:hover {
@@ -244,6 +250,7 @@ select:hover {
   padding: 0.25em;
   background-color: #FFFFFF;
   color: #000000;
+  opacity: 0.8;
 }
 
 .iceCreamFormInputCheckboxLabel:hover {
