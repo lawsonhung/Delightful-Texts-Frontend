@@ -240,6 +240,7 @@ select:hover {
   color: #FFFFFF;
   width: 15%;
   transition: 0.25s;
+  border: 1px solid #000000;
 }
 
 .iceCreamFormInputCheckboxLabel {
@@ -258,6 +259,7 @@ select:hover {
   color: #FFFFFF;
   opacity: 0.9;
   transition: 0.25s;
+  border: 1px solid #000000;
 }
 
 .hotChocolateFudge {
@@ -287,6 +289,7 @@ select:hover {
   width: 90%;
   transition: 2s;
   transition-timing-function: ease-out;
+  border: 2px solid #000000;
 }
 
 /************ iceCreamOrderForm End ***********/
