@@ -139,9 +139,11 @@ class HomePage extends Component {
             />
 
           <div className="welcomeToHellOverlay" id="welcomeToHellOverlay" onClick={() => this.turnOffHellOverlay()}>
-            <h1 className="welcomeToHellOverlayMsg overlayMsg"> Welcome to hell... 
+            <h1 className="welcomeToHellOverlayMsg overlayMsg"> Welcome to Delightful Texts 2.0... 
               <br/>
-              Click anywhere to continue 
+              Click anywhere to continue
+              <br/>
+              Then refresh and scroll down
             </h1> 
           </div>
 
