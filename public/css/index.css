@@ -234,6 +234,9 @@ select:hover {
 .iceCreamFormInputCheckboxLabel {
   transition: 0.25s;
   border-radius: 5px;
+  border: 1px solid #3E3E3E;
+  box-shadow: 2px 2px 5px #3E3E3E;
+  padding: 0.25em;
 }
 
 .iceCreamFormInputCheckboxLabel:hover {

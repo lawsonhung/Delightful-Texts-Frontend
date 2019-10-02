@@ -75,8 +75,9 @@ class IceCreamOrderPage extends Component {
     .then(data => {
       console.log("What is data after submitting ice cream form?", data)
       // this.props.orderIceCream()
-      // this.props.updateIceCreamOrders()
     })
+    
+    // this.props.updateIceCreamOrders()
 
     this.props.turnOnHellOverlay()
     
