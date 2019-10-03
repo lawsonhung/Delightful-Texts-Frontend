@@ -133,7 +133,7 @@ class LogInPage extends Component {
 
           <label>Password: 
             <input name="password" 
-              type="text" 
+              type="password" 
               placeholder="Enter your password" 
               onChange={this.handlePasswordChange}>
             </input>
