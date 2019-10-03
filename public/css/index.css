@@ -168,7 +168,6 @@ input:hover {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  /* opacity: 0.9; */
   z-index: 10;
   cursor: pointer;
 }
@@ -310,7 +309,6 @@ select:hover {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  /* opacity: 0.9; */
   z-index: 10;
   cursor: pointer;
 }
