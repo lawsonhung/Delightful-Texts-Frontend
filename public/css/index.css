@@ -182,7 +182,7 @@ input:hover {
 }
 
 .welcomeOverlayMsg {
-  font-size: 8em;
+  font-size: 7em;
   margin-top: 10vh;
 }
 
@@ -314,7 +314,7 @@ select:hover {
 }
 
 .welcomeToHellOverlayMsg {
-  font-size: 8em;
+  font-size: 6em;
 }
 
 .welcomeToHellOverlayMsg:hover {
