@@ -28,7 +28,7 @@ class SignUpPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      // console.log("User creation status: ", userLogInData)
+      console.log("User creation status: ", userLogInData)
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
       localStorage.setItem('username', userLogInData.user.username)
