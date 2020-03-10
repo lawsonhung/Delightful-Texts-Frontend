@@ -62,7 +62,7 @@ class SignUpPage extends Component {
 
           <label >Password: 
             <input name="password" 
-              type="text" 
+              type="password" 
               placeholder="Create a password" 
               onChange={this.handlePasswordChange}>
             </input>
