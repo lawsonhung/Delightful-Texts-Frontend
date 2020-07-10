@@ -15,7 +15,11 @@ class SignUpPage extends Component {
   handleSignUpSubmit = (e) => {
     e.preventDefault()
 
+    // Local fetch
     fetch("http://localhost:3000/api/v1/users", {
+    
+    // Heroku fetch
+    // fetch("https://tranquil-castle-49501.herokuapp.com/api/v1/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
