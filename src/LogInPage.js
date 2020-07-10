@@ -75,7 +75,12 @@ class LogInPage extends Component {
   handleLogInSubmit = (e) => {
     e.preventDefault()
 
-    fetch("http://localhost:3000/api/v1/login", {
+
+    // Local fetch
+    fetch("http://localhost:3000/api/v1/users", {
+    
+    // Heroku fetch
+    // fetch("https://tranquil-castle-49501.herokuapp.com/", {
       method: "POST",
       headers: {
         'Accept': 'application/json',
