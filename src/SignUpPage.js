@@ -16,10 +16,10 @@ class SignUpPage extends Component {
     e.preventDefault()
 
     // Local fetch
-    // fetch("http://localhost:3000/api/v1/users", {
+    fetch("http://localhost:3000/api/v1/users", {
     
     // Heroku fetch
-    fetch("https://tranquil-castle-49501.herokuapp.com/", {
+    // fetch("https://tranquil-castle-49501.herokuapp.com/api/v1/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ class SignUpPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      // console.log("User creation status: ", userLogInData)
+      console.log("User creation status: ", userLogInData)
       localStorage.setItem('jwt', userLogInData.jwt)
       localStorage.setItem('userID', userLogInData.user.id)
       localStorage.setItem('username', userLogInData.user.username)
