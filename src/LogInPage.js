@@ -77,7 +77,10 @@ class LogInPage extends Component {
 
 
     // Local fetch
-    fetch("http://localhost:3000/api/v1/users", {
+    // fetch("http://localhost:3000/api/v1/users", {
+    
+    // Local fetch 2 - rebuilding backend
+    fetch("http://localhost:3000/login", {
     
     // Heroku fetch
     // fetch("https://tranquil-castle-49501.herokuapp.com/", {
@@ -97,20 +100,38 @@ class LogInPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("Log in status: ", userLogInData)
+      console.log("Log in status: ", userLogInData);
       // put token in local storage to access profile above when authorizing
-      localStorage.setItem('jwt', userLogInData.jwt)
-      localStorage.setItem('userID', userLogInData.user.id)
-      localStorage.setItem('username', userLogInData.user.username)
+      // localStorage.setItem('jwt', userLogInData.jwt)
+      // localStorage.setItem('userID', userLogInData.user.id)
+      // localStorage.setItem('username', userLogInData.user.username)
+
+      // Rebuilding backend
+      localStorage.setItem('jwt', userLogInData.token);
+      this.fetchProfile();
+
       // console.log("this.props after loggin in: ", this.props);
-      this.props.updateUserData(userLogInData)
+      this.props.updateUserData(userLogInData);
       // console.log("this.props after updating user in redux store: ", this.props);
       
       
-      this.props.history.push('/homepage')
+      this.props.history.push('/homepage');
       document.getElementById("welcomeOverlay").style.display = "block";
     })
 
+  }
+
+  fetchProfile = () => {
+    fetch('http://localhost:3000/profile',{
+      headers: {
+        'Authorization': `Bearer ${localStorage.jwt}`
+      }
+    })
+    .then(r => r.json())
+    .then(user => {
+      localStorage.userID = user.id;
+      localStorage.username = user.username;
+    })
   }
 
   render() {

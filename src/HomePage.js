@@ -7,12 +7,14 @@ class HomePage extends Component {
 
   state = {
     userID: localStorage.userID,
+    username: localStorage.username,
     iceCreamOrders: [],
     userIceCreamOrders: []
   }
 
   componentDidMount() {
-    this.fetchAllIceCreamOrders()
+    // this.fetchAllIceCreamOrders()
+    this.fetchProfile()
   }
 
   fetchAllIceCreamOrders = () => {
@@ -30,8 +32,31 @@ class HomePage extends Component {
     })
   }
 
+  fetchProfile = () => {
+    fetch('http://localhost:3000/profile',{
+      headers: {
+        'Authorization': `Bearer ${localStorage.jwt}`
+      }
+    })
+    .then(r => r.json())
+    .then(user => {
+      localStorage.userID = user.id;
+      localStorage.username = user.username;
+
+      this.setState({
+        username: user.username,
+        userID: user.id
+      })
+    })
+  }
+
   logOut = () => {
-    fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
+    // Local fetch
+    // fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
+
+    // Local fetch 2 - rebuilding backend
+    fetch(`http://localhost:3000/users/${localStorage.userID}`, {
+
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -115,10 +140,14 @@ class HomePage extends Component {
       <div>
 
         <div className="welcomeOverlay" id="welcomeOverlay" onClick={() => this.turnOffWelcomeOverlay()}>
-          <h1 className="welcomeOverlayMsg overlayMsg"> Welcome to Delightful Texts, {localStorage.username}!
-            <br/>
-            Click anywhere to continue 
-          </h1> 
+          {
+            this.state.username ?
+            <h1 className="welcomeOverlayMsg overlayMsg"> Welcome to Delightful Texts, {localStorage.username}!
+              <br/>
+              Click anywhere to continue 
+            </h1> :
+            <h1 className="welcomeOverlayMsg overlayMsg">Getting your info...</h1>
+          }
         </div>
 
         <div className="headerBar">
