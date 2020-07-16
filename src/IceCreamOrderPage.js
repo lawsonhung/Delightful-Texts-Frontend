@@ -54,7 +54,11 @@ class IceCreamOrderPage extends Component {
     //   "phone_number": "twilio phone number"
     // }
 
-    fetch("http://localhost:3000/api/v1/ice_creams", {
+    // Local fetch
+    // fetch("http://localhost:3000/api/v1/ice_creams", {
+
+    // Local fetch 2 - rebuilding backend
+    fetch("http://localhost:3000/ice_cream_orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +72,7 @@ class IceCreamOrderPage extends Component {
         "sprinkles": this.state.sprinkles,
         "hot_chocolate_fudge": this.state["hot chocolate fudge"],
         "user_id": localStorage.userID,
-        "phone_number": "twilio phone number"
+        // "phone_number": "twilio phone number"
       })
     })
     .then(r => r.json())
