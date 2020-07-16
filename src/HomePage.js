@@ -13,12 +13,16 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    // this.fetchAllIceCreamOrders()
+    this.fetchAllIceCreamOrders()
     this.fetchProfile()
   }
 
   fetchAllIceCreamOrders = () => {
-    fetch('http://localhost:3000/api/v1/ice_creams', {
+    // Local fetch
+    // fetch('http://localhost:3000/api/v1/ice_creams', {
+
+    // Local fetch 2 - rebuilding backend
+    fetch('http://localhost:3000/ice_cream_orders', {
       headers: {
         Authorization: `Bearer ${localStorage.jwt}`
       }
@@ -27,7 +31,7 @@ class HomePage extends Component {
     .then(iceCreamOrders => {
       console.log("All ice cream orders: ", iceCreamOrders)
       
-      this.setState({iceCreamOrders: iceCreamOrders.ice_creams})
+      this.setState({iceCreamOrders: iceCreamOrders.ice_cream_orders})
 
     })
   }
