@@ -32,7 +32,6 @@ class HomePage extends Component {
       console.log("All ice cream orders: ", iceCreamOrders)
       
       this.setState({iceCreamOrders: iceCreamOrders.ice_cream_orders})
-
     })
   }
 
