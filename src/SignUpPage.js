@@ -16,7 +16,10 @@ class SignUpPage extends Component {
     e.preventDefault()
 
     // Local fetch
-    fetch("http://localhost:3000/api/v1/users", {
+    // fetch("http://localhost:3000/api/v1/users", {
+
+    // Local fetch 2 - rebuilding backend
+    fetch("http://localhost:3000/signup", {
     
     // Heroku fetch
     // fetch("https://tranquil-castle-49501.herokuapp.com/api/v1/users", {
@@ -33,9 +36,9 @@ class SignUpPage extends Component {
     .then(r => r.json())
     .then(userLogInData => {
       console.log("User creation status: ", userLogInData)
-      localStorage.setItem('jwt', userLogInData.jwt)
-      localStorage.setItem('userID', userLogInData.user.id)
-      localStorage.setItem('username', userLogInData.user.username)
+      localStorage.setItem('jwt', userLogInData.token)
+      // localStorage.setItem('userID', userLogInData.user.id)
+      // localStorage.setItem('username', userLogInData.user.username)
       // console.log("What is this.props from redux store?", this.props)
       this.props.updateUserData(userLogInData)
       this.props.history.push('/homepage')
