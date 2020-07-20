@@ -170,21 +170,21 @@ class HomePage extends Component {
               turnOnHellOverlay={this.turnOnHellOverlay}
             />
 
-          <div className="welcomeToHellOverlay" id="welcomeToHellOverlay" onClick={() => this.turnOffHellOverlay()}>
-            <h1 className="welcomeToHellOverlayMsg overlayMsg"> Welcome to Delightful Texts 2.0... 
-              <br/>
-              Click anywhere to continue
-              <br/>
-              Then refresh and scroll down
-            </h1> 
+            <div className="welcomeToHellOverlay" id="welcomeToHellOverlay" onClick={() => this.turnOffHellOverlay()}>
+              <h1 className="welcomeToHellOverlayMsg overlayMsg"> Welcome to Delightful Texts 2.0... 
+                <br/>
+                Click anywhere to continue
+                <br/>
+                Then refresh and scroll down
+              </h1> 
+            </div>
+
           </div>
 
-        </div>
-
-        
-        <div className="parallax2">
-          <ViewIceCreamOrdersPage userIceCreamOrders={this.state.userIceCreamOrders} />
-        </div>
+          
+          <div className="parallax2">
+            <ViewIceCreamOrdersPage userIceCreamOrders={this.state.userIceCreamOrders} />
+          </div>
         </div>
         
       </div>
