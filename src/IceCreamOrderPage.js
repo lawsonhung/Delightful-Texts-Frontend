@@ -13,7 +13,11 @@ class IceCreamOrderPage extends Component {
 
   renderIceCreamOrders = () => {
     
-    fetch("http://localhost:3000/api/v1/profile", {
+    // Local fetch 2 - rebuilding backend
+    // fetch("http://localhost:3000/api/v1/profile", {
+
+    // Heroku fetch
+    fetch("https://delightful-texts-backend-2.herokuapp.com/profile", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${localStorage.jwt}`
@@ -58,7 +62,10 @@ class IceCreamOrderPage extends Component {
     // fetch("http://localhost:3000/api/v1/ice_creams", {
 
     // Local fetch 2 - rebuilding backend
-    fetch("http://localhost:3000/ice_cream_orders", {
+    // fetch("http://localhost:3000/ice_cream_orders", {
+
+    // Heroku fetch
+    fetch("https://delightful-texts-backend-2.herokuapp.com/ice_cream_orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -19,10 +19,10 @@ class SignUpPage extends Component {
     // fetch("http://localhost:3000/api/v1/users", {
 
     // Local fetch 2 - rebuilding backend
-    fetch("http://localhost:3000/signup", {
+    // fetch("http://localhost:3000/signup", {
     
     // Heroku fetch
-    // fetch("https://tranquil-castle-49501.herokuapp.com/api/v1/users", {
+    fetch("https://delightful-texts-backend-2.herokuapp.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
