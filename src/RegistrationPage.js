@@ -5,7 +5,7 @@ import SignUpPage from './SignUpPage';
 class RegistrationPage extends Component {
 
   componentDidMount() {
-    alert('Login credentials\nUsername: Lawson\nPassword: abc123\nRefresh the page if you forget this info');
+    alert('Login credentials\nUsername: Lawson\nPassword: abc123\nRefresh the page if you forget this info'); 
   }
   
   render() {
