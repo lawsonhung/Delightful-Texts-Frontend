@@ -80,18 +80,18 @@ class LogInPage extends Component {
     // fetch("http://localhost:3000/api/v1/users", {
     
     // Local fetch 2 - rebuilding backend
-    fetch("http://localhost:3000/login", {
+    // fetch("http://localhost:3000/login", {
     
     // Heroku fetch
-    // fetch("https://tranquil-castle-49501.herokuapp.com/", {
+    fetch('https://delightful-texts-backend-2.herokuapp.com/login', {
       method: "POST",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username: this.props.username,
-        password: this.props.password
+        "username": this.props.username,
+        "password": this.props.password
 
         // store.getState()
 
@@ -122,7 +122,11 @@ class LogInPage extends Component {
   }
 
   fetchProfile = () => {
-    fetch('http://localhost:3000/profile',{
+    // Local fetch 2 - rebuilding backend
+    // fetch('http://localhost:3000/profile',{
+
+    // Heroku fetch
+    fetch("https://delightful-texts-backend-2.herokuapp.com/profile", {
       headers: {
         'Authorization': `Bearer ${localStorage.jwt}`
       }

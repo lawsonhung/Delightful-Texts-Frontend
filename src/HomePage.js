@@ -22,9 +22,12 @@ class HomePage extends Component {
     // fetch('http://localhost:3000/api/v1/ice_creams', {
 
     // Local fetch 2 - rebuilding backend
-    fetch('http://localhost:3000/ice_cream_orders', {
+    // fetch('http://localhost:3000/ice_cream_orders', {
+
+    // Heroku fetch
+    fetch("https://delightful-texts-backend-2.herokuapp.com/ice_cream_orders", {
       headers: {
-        Authorization: `Bearer ${localStorage.jwt}`
+        'Authorization': `Bearer ${localStorage.jwt}`
       }
     })
     .then(r => r.json())
@@ -36,7 +39,11 @@ class HomePage extends Component {
   }
 
   fetchProfile = () => {
-    fetch('http://localhost:3000/profile',{
+    // Local fetch 2 - rebuilding backend
+    // fetch('http://localhost:3000/profile',{
+
+    // Heroku fetch
+    fetch("https://delightful-texts-backend-2.herokuapp.com/profile", {
       headers: {
         'Authorization': `Bearer ${localStorage.jwt}`
       }
@@ -58,7 +65,10 @@ class HomePage extends Component {
     // fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`,{
 
     // Local fetch 2 - rebuilding backend
-    fetch(`http://localhost:3000/users/${localStorage.userID}`, {
+    // fetch(`http://localhost:3000/users/${localStorage.userID}`, {
+
+    // Heroku fetch
+    fetch(`https://delightful-texts-backend-2.herokuapp.com/users/${localStorage.userID}`, {
 
       method: 'PATCH',
       headers: {
@@ -73,7 +83,7 @@ class HomePage extends Component {
     // localStorage.removeItem('userID')
     // localStorage.removeItem('username')
     localStorage.clear()
-    this.props.history.push('/')
+    this.props.history.push('/registration')
   }
 
   filterUserIceCreamOrders = () => {

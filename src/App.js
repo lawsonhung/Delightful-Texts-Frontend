@@ -13,8 +13,8 @@ render(){
       <Switch>
         <Route path={'/signup'} component={SignUpPage} />
         <Route path={'/login'} component={LogInPage} />
-        <Route path={'/homepage'} component={HomePage} />
-        <Route path={'/'} component={RegistrationPage} />
+        <Route path={'/registration'} component={RegistrationPage} />
+        <Route path={'/'} component={HomePage} />
       </Switch>
     )
   }
