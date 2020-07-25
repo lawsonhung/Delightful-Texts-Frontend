@@ -83,7 +83,7 @@ class HomePage extends Component {
     // localStorage.removeItem('userID')
     // localStorage.removeItem('username')
     localStorage.clear()
-    this.props.history.push('/registration')
+    this.props.history.push('/')
   }
 
   filterUserIceCreamOrders = () => {

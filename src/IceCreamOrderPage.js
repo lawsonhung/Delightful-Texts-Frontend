@@ -91,7 +91,7 @@ class IceCreamOrderPage extends Component {
     // this.props.updateIceCreamOrders()
 
     this.props.turnOnHellOverlay()
-    
+    alert('Refresh the page and scroll down to see the order you just placed.')
   }
 
   render() {
