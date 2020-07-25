@@ -35,13 +35,13 @@ class SignUpPage extends Component {
     })
     .then(r => r.json())
     .then(userLogInData => {
-      console.log("User creation status: ", userLogInData)
-      localStorage.setItem('jwt', userLogInData.token)
+      console.log("User creation status: ", userLogInData);
+      localStorage.setItem('jwt', userLogInData.token);
       // localStorage.setItem('userID', userLogInData.user.id)
       // localStorage.setItem('username', userLogInData.user.username)
       // console.log("What is this.props from redux store?", this.props)
-      this.props.updateUserData(userLogInData)
-      this.props.history.push('/homepage')
+      this.props.updateUserData(userLogInData);
+      this.props.history.push('/homepage');
       document.getElementById("welcomeOverlay").style.display = "block";
     })
 
