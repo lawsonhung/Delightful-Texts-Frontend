@@ -5,10 +5,11 @@ import SignUpPage from './SignUpPage';
 class RegistrationPage extends Component {
 
   componentDidMount() {
-    alert('Notes:\nThe Heroku server takes about 30 seconds to wake up due to inactivity.\nLogin credentials:\nUsername: Lawson\nPassword: abc123\nRefresh the page if you forget this info.'); 
+    alert('Notes:\nRefresh the page if you forget this info.\nThe Heroku server takes about 30 seconds to wake up due to inactivity.\nLogin credentials:\nUsername: Lawson\nPassword: abc123');
   }
   
   render() {
+
     return (
       <div className="registrationPage">
 
