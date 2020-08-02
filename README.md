@@ -1,14 +1,14 @@
-Backend:
 
-https://github.com/lawsonhung/Delightful-Texts-Backend
+To start on your computer locally, in the project directory, you can run:
+
+### `npm start`
+
+Backend: https://github.com/lawsonhung/Delightful-Texts-Backend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Or [http://localhost:3001](http://localhost:3001) or any other port you specify if you're running the rails server for the backend API.
