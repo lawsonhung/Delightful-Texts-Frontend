@@ -1,3 +1,4 @@
+# Delightful Texts
 
 To start on your computer locally, in the project directory, you can run:
 
