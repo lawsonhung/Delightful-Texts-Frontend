@@ -12,10 +12,10 @@ class RegistrationPage extends Component {
     if (localStorage.jwt)
       this.props.history.push('/homepage');
     else
-      this.logInAlert();
+      this.logInNotesAlert();
   }
 
-  logInAlert = () => {
+  logInNotesAlert = () => {
     alert('Notes:\nRefresh the page if you forget this info.\nThe Heroku server takes about 30 seconds to wake up due to inactivity.\nLogin credentials:\nUsername: Lawson\nPassword: abc123');
   }
 
