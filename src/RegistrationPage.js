@@ -5,9 +5,20 @@ import SignUpPage from './SignUpPage';
 class RegistrationPage extends Component {
 
   componentDidMount() {
-    alert('Notes:\nRefresh the page if you forget this info.\nThe Heroku server takes about 30 seconds to wake up due to inactivity.\nLogin credentials:\nUsername: Lawson\nPassword: abc123');
+    this.checkLogInStatus();
   }
   
+  checkLogInStatus = () => {
+    if (localStorage.jwt)
+      this.props.history.push('/homepage');
+    else
+      this.logInAlert();
+  }
+
+  logInAlert = () => {
+    alert('Notes:\nRefresh the page if you forget this info.\nThe Heroku server takes about 30 seconds to wake up due to inactivity.\nLogin credentials:\nUsername: Lawson\nPassword: abc123');
+  }
+
   render() {
 
     return (
