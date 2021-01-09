@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class ViewIceCreamOrdersPage extends Component {
 
+  editOrder = (order) => {
+    console.log(order)
+  }
+
   render() {
     // console.log("this.props for ViewiceCreamOrdersPage: ", this.props);
 
@@ -15,12 +19,14 @@ class ViewIceCreamOrdersPage extends Component {
           
           return (
             <div key={order.id}>
-              <h2 className="orderDescription">
-                  <span role="img" aria-label="ice cream">🍦</span> Order {order.id}: A {order.size} of {order.flavor} ice cream
-                  {order.m_and_ms || order.peanuts || order.sprinkles ? " topped with " : null}
-                  {order.m_and_ms ? "M&M's" : null} {order.peanuts ? "peanuts" : null} {order.sprinkles ? "sprinkles" : null} 
-                  {order.hot_chocolate_fudge ? " finished with some hot chocolate fudge" : null} <span role="img" aria-label="ice cream">🍦</span>
-              </h2>
+              <button onClick={() => this.editOrder(order)}>
+                <h2 className="orderDescription">
+                    <span role="img" aria-label="ice cream">🍦</span> Order {order.id}: A {order.size} of {order.flavor} ice cream
+                    {order.m_and_ms || order.peanuts || order.sprinkles ? " topped with " : null}
+                    {order.m_and_ms ? "M&M's" : null} {order.peanuts ? "peanuts" : null} {order.sprinkles ? "sprinkles" : null} 
+                    {order.hot_chocolate_fudge ? " finished with some hot chocolate fudge" : null} <span role="img" aria-label="ice cream">🍦</span>
+                </h2>
+              </button>
               <br/>
             </div>
             )
