@@ -10,21 +10,32 @@ class ViewIceCreamOrdersPage extends Component {
       span: document.getElementsByClassName("close")[0]
     },
     () => {
+      this.displayModal();
+      this.closeOnCloseClick();
+      this.closeOnWindowClick();
+    })
+  }
+
+  displayModal = () => {
+    // eslint-disable-next-line
+    this.state.modal.style.display = "block";
+  }
+
+  closeOnCloseClick = () => {
+    // eslint-disable-next-line
+    this.state.span.onclick = () => {
       // eslint-disable-next-line
-      this.state.modal.style.display = "block";
-      // console.log(this.state.span);
-      // eslint-disable-next-line
-      this.state.span.onclick = () => {
+      this.state.modal.style.display = "none";
+    }
+  }
+
+  closeOnWindowClick = () => {
+    window.onclick = (e) => {
+      if (e.target === this.state.modal) {
         // eslint-disable-next-line
         this.state.modal.style.display = "none";
       }
-      window.onclick = (e) => {
-        if (e.target === this.state.modal) {
-          // eslint-disable-next-line
-          this.state.modal.style.display = "none";
-        }
-      }
-    })
+    }
   }
 
   render() {
