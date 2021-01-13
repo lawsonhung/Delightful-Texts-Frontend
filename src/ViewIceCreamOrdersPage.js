@@ -4,7 +4,6 @@ import './css/Modal.css';
 class ViewIceCreamOrdersPage extends Component {
 
   editOrder = (order) => {
-    console.log(order);
     this.setState({
       modal: document.getElementById(`modal-${order.id}`),
       span: document.getElementsByClassName("close")[0]
