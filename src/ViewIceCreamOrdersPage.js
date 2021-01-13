@@ -1,9 +1,40 @@
 import React, { Component } from 'react';
+import './css/Modal.css';
 
 class ViewIceCreamOrdersPage extends Component {
 
   editOrder = (order) => {
-    console.log(order)
+    this.setState({
+      modal: document.getElementById(`modal-${order.id}`),
+      span: document.getElementsByClassName("close")[0]
+    },
+    () => {
+      this.displayModal();
+      this.closeOnCloseClick();
+      this.closeOnWindowClick();
+    })
+  }
+
+  displayModal = () => {
+    // eslint-disable-next-line
+    this.state.modal.style.display = "block";
+  }
+
+  closeOnCloseClick = () => {
+    // eslint-disable-next-line
+    this.state.span.onclick = () => {
+      // eslint-disable-next-line
+      this.state.modal.style.display = "none";
+    }
+  }
+
+  closeOnWindowClick = () => {
+    window.onclick = (e) => {
+      if (e.target === this.state.modal) {
+        // eslint-disable-next-line
+        this.state.modal.style.display = "none";
+      }
+    }
   }
 
   render() {
@@ -27,12 +58,14 @@ class ViewIceCreamOrdersPage extends Component {
                     {order.hot_chocolate_fudge ? " finished with some hot chocolate fudge" : null} <span role="img" aria-label="ice cream">🍦</span>
                 </h2>
               </button>
+
               <div id={`modal-${order.id}`} class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
                   <p>Modal showing up!</p>
                 </div>
               </div>
+
               <br/>
             </div>
             )
