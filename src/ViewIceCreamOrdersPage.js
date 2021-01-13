@@ -60,62 +60,63 @@ class ViewIceCreamOrdersPage extends Component {
               </button>
 
               <div id={`modal-${order.id}`} className="modal">
-                <div className="modal-content">
+                <h2 className="modal-content">
                   <span className="close">&times;</span>
                   <form>
-                    <h2>
 
-                      Change your order for order number {order.id}
+                    Change your order for order number {order.id}
 
-                      <br/>
+                    <br/>
 
-                      Flavor:&nbsp;
-                      <select value={order.flavor} onChange={() => {}}>
-                        <option value="vanilla">Vanilla</option>
-                        <option value="chocolate">Chocolate</option>
-                      </select>
+                    Flavor:&nbsp;
+                    <select value={order.flavor} onChange={() => {}}>
+                      <option value="vanilla">Vanilla</option>
+                      <option value="chocolate">Chocolate</option>
+                    </select>
 
-                      <br/>
+                    <br/>
 
-                      M&M's:&nbsp;
-                      <input type="checkbox"
-                      checked={order.m_and_ms}
-                      onChange={() => {}} />
+                    M&M's:&nbsp;
+                    <input type="checkbox"
+                    checked={order.m_and_ms}
+                    onChange={() => {}} />
 
-                      <br/>
+                    <br/>
 
-                      Peanuts:&nbsp;
-                      <input type="checkbox"
-                      checked={order.peanuts}
-                      onChange={() => {}} />
+                    Peanuts:&nbsp;
+                    <input type="checkbox"
+                    checked={order.peanuts}
+                    onChange={() => {}} />
 
-                      <br/>
+                    <br/>
 
-                      Sprinkles:&nbsp;
-                      <input type="checkbox"
-                      checked={order.sprinkles}
-                      onChange={() => {}} />
+                    Sprinkles:&nbsp;
+                    <input type="checkbox"
+                    checked={order.sprinkles}
+                    onChange={() => {}} />
 
-                      <br/>
+                    <br/>
 
-                      Hot Chocolate Fudge:&nbsp;
-                      <input type="checkbox"
-                      checked={order.hot_chocolate_fudge}
-                      onChange={() => {}} />
+                    Hot Chocolate Fudge:&nbsp;
+                    <input type="checkbox"
+                    checked={order.hot_chocolate_fudge}
+                    onChange={() => {}} />
 
-                      <br/>
+                    <br/>
 
-                      Size:&nbsp;
-                      <select value={order.size} onChange={() => {}}>
-                        <option value="cone">Cone</option>
-                        <option value="small cup">Small Cup</option>
-                        <option value="medium cup">Medium Cup</option>
-                        <option value="large cup">Large Cup</option>
-                      </select>
+                    Size:&nbsp;
+                    <select value={order.size} onChange={() => {}}>
+                      <option value="cone">Cone</option>
+                      <option value="small cup">Small Cup</option>
+                      <option value="medium cup">Medium Cup</option>
+                      <option value="large cup">Large Cup</option>
+                    </select>
 
-                    </h2>
+                    <br/>
+
+                    <input className="iceCreamOrderFormSubmitBtn" type="submit" value="Change your order"></input>
                   </form>
-                </div>
+                </h2>
               </div>
 
               <br/>
