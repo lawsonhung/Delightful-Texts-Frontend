@@ -13,11 +13,14 @@ class ViewIceCreamOrdersPage extends Component {
       // eslint-disable-next-line
       this.state.modal.style.display = "block";
       // console.log(this.state.span);
+      // eslint-disable-next-line
       this.state.span.onclick = () => {
+        // eslint-disable-next-line
         this.state.modal.style.display = "none";
       }
       window.onclick = (e) => {
         if (e.target === this.state.modal) {
+          // eslint-disable-next-line
           this.state.modal.style.display = "none";
         }
       }
