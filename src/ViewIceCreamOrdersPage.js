@@ -59,10 +59,29 @@ class ViewIceCreamOrdersPage extends Component {
                 </h2>
               </button>
 
-              <div id={`modal-${order.id}`} class="modal">
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Modal showing up!</p>
+              <div id={`modal-${order.id}`} className="modal">
+                <div className="modal-content">
+                  <span className="close">&times;</span>
+                  <h2>
+
+                    Change your order for order number {order.id}
+
+                    <br/>
+
+                    Flavor:&nbsp;
+                    <select value={order.flavor} onChange={() => {}}>
+                      <option value="vanilla">Vanilla</option>
+                      <option value="chocolate">Chocolate</option>
+                    </select>
+
+                  <br/>
+
+                    M&M's:&nbsp;
+                    <input type="checkbox"
+                    checked={order.m_and_ms}
+                    onChange={() => {}} />
+
+                  </h2>
                 </div>
               </div>
 
