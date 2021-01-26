@@ -37,6 +37,13 @@ class ViewIceCreamOrdersPage extends Component {
     }
   }
 
+  handleIceCreamOrderChange = (e) => {
+    const target = e.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+
+    this.setState({ [target.name]: value })
+  }
+
   render() {
     // console.log("this.props for ViewiceCreamOrdersPage: ", this.props);
 
@@ -69,7 +76,7 @@ class ViewIceCreamOrdersPage extends Component {
                     <br/>
 
                     Flavor:&nbsp;
-                    <select value={order.flavor} onChange={() => {}}>
+                    <select value={order.flavor} onChange={this.handleIceCreamOrderChange}>
                       <option value="vanilla">Vanilla</option>
                       <option value="chocolate">Chocolate</option>
                     </select>
